@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26F33AEB390CEF7603D01012 /* Pods_MoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72CA867AEE712C70DFFF2FD2 /* Pods_MoviesTests.framework */; };
+		0E939DE016261B275184AC4B /* libPods-MoviesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D1B6C3E41D4E046893637B /* libPods-MoviesUITests.a */; };
+		11EAA6F4A2ED7225A301B005 /* libPods-default-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */; };
+		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD5D22F891900080C9EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5C22F891900080C9EF /* ViewController.swift */; };
 		34DABD6022F891900080C9EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD5E22F891900080C9EF /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		34DABD6522F891920080C9EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6322F891920080C9EF /* LaunchScreen.storyboard */; };
 		34DABD7022F891920080C9EF /* MoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD6F22F891920080C9EF /* MoviesTests.swift */; };
 		34DABD7B22F891920080C9EF /* MoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD7A22F891920080C9EF /* MoviesUITests.swift */; };
-		584F4CEC5E7B46601E520F8B /* Pods_MoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F03FC5949CFAA12DA58C884 /* Pods_MoviesUITests.framework */; };
-		9370E17B0913AD816908BA84 /* Pods_default_Movies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 697D16516A61308A0A09D5CF /* Pods_default_Movies.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		0C313269A29C5C3F90655F7B /* Pods-MoviesUITests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (development).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (development).xcconfig"; sourceTree = "<group>"; };
+		30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-default-Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		32068EC4C98FF72277902521 /* libPods-MoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD5C22F891900080C9EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,10 +56,8 @@
 		47FCBF85FC25BAFF2D946675 /* Pods-MoviesUITests.debug (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.debug (staging).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.debug (staging).xcconfig"; sourceTree = "<group>"; };
 		4DB4C42D027D9BE5F37211E4 /* Pods-default-Movies.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-default-Movies.release (staging).xcconfig"; path = "Target Support Files/Pods-default-Movies/Pods-default-Movies.release (staging).xcconfig"; sourceTree = "<group>"; };
 		55ED91E9B20C0AB01F29FCE2 /* Pods-default-Movies.debug (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-default-Movies.debug (staging).xcconfig"; path = "Target Support Files/Pods-default-Movies/Pods-default-Movies.debug (staging).xcconfig"; sourceTree = "<group>"; };
-		5F03FC5949CFAA12DA58C884 /* Pods_MoviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		697D16516A61308A0A09D5CF /* Pods_default_Movies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_default_Movies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D1B6C3E41D4E046893637B /* libPods-MoviesUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoviesUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71456EEE0747C430F92D45C0 /* Pods-MoviesTests.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release (staging).xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release (staging).xcconfig"; sourceTree = "<group>"; };
-		72CA867AEE712C70DFFF2FD2 /* Pods_MoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		775D514F94265D7C9A7D6569 /* Pods-MoviesUITests.release (staging).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (staging).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (staging).xcconfig"; sourceTree = "<group>"; };
 		77ED8F3019C4F94A90AAF1F1 /* Pods-MoviesTests.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release (production).xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release (production).xcconfig"; sourceTree = "<group>"; };
 		8D33243A5258EC32F96C88DB /* Pods-default-Movies.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-default-Movies.debug (production).xcconfig"; path = "Target Support Files/Pods-default-Movies/Pods-default-Movies.debug (production).xcconfig"; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9370E17B0913AD816908BA84 /* Pods_default_Movies.framework in Frameworks */,
+				11EAA6F4A2ED7225A301B005 /* libPods-default-Movies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26F33AEB390CEF7603D01012 /* Pods_MoviesTests.framework in Frameworks */,
+				3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,7 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				584F4CEC5E7B46601E520F8B /* Pods_MoviesUITests.framework in Frameworks */,
+				0E939DE016261B275184AC4B /* libPods-MoviesUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,9 +157,9 @@
 		538F74FA84350AFD57307A05 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72CA867AEE712C70DFFF2FD2 /* Pods_MoviesTests.framework */,
-				5F03FC5949CFAA12DA58C884 /* Pods_MoviesUITests.framework */,
-				697D16516A61308A0A09D5CF /* Pods_default_Movies.framework */,
+				32068EC4C98FF72277902521 /* libPods-MoviesTests.a */,
+				69D1B6C3E41D4E046893637B /* libPods-MoviesUITests.a */,
+				30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
