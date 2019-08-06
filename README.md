@@ -57,3 +57,7 @@ bundle exec pod install
 ### [SwiftLint](https://github.com/realm/SwiftLint)
 
 A tool to enforce Swift style and conventions.
+
+### [Nimble](https://github.com/Quick/Nimble)
+
+A Matcher Framework for Swift and Objective-C
