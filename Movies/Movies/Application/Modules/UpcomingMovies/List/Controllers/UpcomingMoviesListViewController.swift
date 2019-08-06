@@ -5,10 +5,11 @@ final class UpcomingMoviesListViewController: UIViewController {
     typealias View = UIView & UpcomingMoviesListViewProtocol
 
     // MARK: - Properties
-    private let margin = 16.0
-    private let listLayout = UpcomingMoviesListLayout()
-
+    // swiftlint:disable:next weak_delegate
+    private let _layoutDelegate = UpcomingMoviesListLayoutDelegate()
     private let _view: View
+
+    var didSelectUpcomingMovie = Delegated<Void, Void>()
 
     // MARK: - Initializers
     required init(_ view: View) {
@@ -51,8 +52,13 @@ extension UpcomingMoviesListViewController: UICollectionViewDataSource {
 private extension UpcomingMoviesListViewController {
     func setupView() {
         _view.collectionView.dataSource = self
-        _view.collectionView.delegate = listLayout
+        _view.collectionView.delegate = _layoutDelegate
 
         _view.collectionView.register(cellType: UpcomingMovieCollectionViewCell.self)
+        _layoutDelegate.didSelectItem.delegate { self.didSelectItem(at: $0) }
+    }
+
+    func didSelectItem(at indexPath: IndexPath) {
+        didSelectUpcomingMovie.call()
     }
 }

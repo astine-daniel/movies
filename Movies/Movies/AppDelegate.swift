@@ -8,8 +8,14 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = UINavigationController(
-            rootViewController: UpcomingMoviesListViewController(UpcomingMoviesListView()))
+
+        let listController = UpcomingMoviesListViewController(UpcomingMoviesListView())
+        let navigationController = UINavigationController(rootViewController: listController)
+        self.window?.rootViewController = navigationController
+
+        listController.didSelectUpcomingMovie.delegate { _ in
+            navigationController.pushViewController(UpcomingMovieDetailViewController(), animated: true)
+        }
 
         self.window?.makeKeyAndVisible()
 

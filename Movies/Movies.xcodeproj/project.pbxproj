@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		0E939DE016261B275184AC4B /* libPods-MoviesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D1B6C3E41D4E046893637B /* libPods-MoviesUITests.a */; };
 		11EAA6F4A2ED7225A301B005 /* libPods-default-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */; };
-		340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */; };
+		340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift */; };
 		340C2EAE22F9B7B400383CC8 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EAD22F9B7B400383CC8 /* CardCollectionViewCell.swift */; };
 		340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EB222F9BCA300383CC8 /* Optional+Default.swift */; };
+		340C2EBA22F9F07300383CC8 /* UpcomingMovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EB922F9F07300383CC8 /* UpcomingMovieDetailViewController.swift */; };
+		340C2EBE22F9F17200383CC8 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EBD22F9F17200383CC8 /* Delegated.swift */; };
+		340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EC022F9F1A400383CC8 /* OptionalType.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -58,9 +61,12 @@
 		0C313269A29C5C3F90655F7B /* Pods-MoviesUITests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (development).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (development).xcconfig"; sourceTree = "<group>"; };
 		30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-default-Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32068EC4C98FF72277902521 /* libPods-MoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListLayout.swift; sourceTree = "<group>"; };
+		340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListLayoutDelegate.swift; sourceTree = "<group>"; };
 		340C2EAD22F9B7B400383CC8 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		340C2EB222F9BCA300383CC8 /* Optional+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Default.swift"; sourceTree = "<group>"; };
+		340C2EB922F9F07300383CC8 /* UpcomingMovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMovieDetailViewController.swift; sourceTree = "<group>"; };
+		340C2EBD22F9F17200383CC8 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
+		340C2EC022F9F1A400383CC8 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -137,12 +143,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		340C2EA822F9AAD900383CC8 /* Layouts */ = {
+		340C2EA822F9AAD900383CC8 /* LayoutDelegates */ = {
 			isa = PBXGroup;
 			children = (
-				340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */,
+				340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift */,
 			);
-			path = Layouts;
+			path = LayoutDelegates;
 			sourceTree = "<group>";
 		};
 		340C2EAB22F9B6E600383CC8 /* Views */ = {
@@ -186,6 +192,39 @@
 			path = Optional;
 			sourceTree = "<group>";
 		};
+		340C2EB622F9F04000383CC8 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EB722F9F04F00383CC8 /* Controllers */,
+				340C2EB822F9F05600383CC8 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		340C2EB722F9F04F00383CC8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EB922F9F07300383CC8 /* UpcomingMovieDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		340C2EB822F9F05600383CC8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		340C2EBF22F9F19100383CC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EBD22F9F17200383CC8 /* Delegated.swift */,
+				340C2EC022F9F1A400383CC8 /* OptionalType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		34DABD4E22F891900080C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				D273D07322F8FCDE0081E09F /* Application */,
+				340C2EBF22F9F19100383CC8 /* Common */,
 				340C2EAF22F9BC7D00383CC8 /* Shared */,
 				D273D07A22F900B40081E09F /* UI */,
 				34DABD5A22F891900080C9EF /* AppDelegate.swift */,
@@ -295,6 +335,7 @@
 		D273D07522F8FD190081E09F /* UpcomingMovies */ = {
 			isa = PBXGroup;
 			children = (
+				340C2EB622F9F04000383CC8 /* Detail */,
 				D273D07622F8FD220081E09F /* List */,
 			);
 			path = UpcomingMovies;
@@ -312,7 +353,7 @@
 		D273D07722F8FD380081E09F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				340C2EA822F9AAD900383CC8 /* Layouts */,
+				340C2EA822F9AAD900383CC8 /* LayoutDelegates */,
 				D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */,
 			);
 			path = Controllers;
@@ -652,11 +693,14 @@
 				D273D07F22F901060081E09F /* Reusable.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
-				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayout.swift in Sources */,
+				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift in Sources */,
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
 				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,
+				340C2EBE22F9F17200383CC8 /* Delegated.swift in Sources */,
+				340C2EBA22F9F07300383CC8 /* UpcomingMovieDetailViewController.swift in Sources */,
 				340C2EAE22F9B7B400383CC8 /* CardCollectionViewCell.swift in Sources */,
+				340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */,
 				D273D0B122F9227D0081E09F /* UpcomingMovieCollectionViewCell.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,

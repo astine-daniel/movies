@@ -1,10 +1,12 @@
 import Foundation
 import UIKit
 
-final class UpcomingMoviesListLayout: NSObject {
+final class UpcomingMoviesListLayoutDelegate: NSObject {
     // MARK: - Properties
     private let margin = 16.0
     private let preferredItemSize = CGSize(width: 324.0, height: 460.0)
+
+    var didSelectItem = Delegated<IndexPath, Void>()
 
     // MARK: - Methods
     func itemsPerRow(for size: CGSize) -> Int {
@@ -14,7 +16,7 @@ final class UpcomingMoviesListLayout: NSObject {
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout extension
-extension UpcomingMoviesListLayout: UICollectionViewDelegateFlowLayout {
+extension UpcomingMoviesListLayoutDelegate: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -43,14 +45,18 @@ extension UpcomingMoviesListLayout: UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(margin)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        didSelectItem.call(indexPath)
+    }
 }
 
 // MARK: - Private extension
-private extension UpcomingMoviesListLayout {
+private extension UpcomingMoviesListLayoutDelegate {
     func itemSize(in collectionSize: CGSize) -> CGSize {
         var width = preferredItemSize.width
 
-        let maxWidthWithMargin = maxWidth(width, with: margin)
+        let maxWidthWithMargin = maxWidth(collectionSize.width, with: margin)
         guard maxWidthWithMargin > width else {
             width = maxWidthWithMargin
             return CGSize(width: width, height: preferredItemSize.height)
