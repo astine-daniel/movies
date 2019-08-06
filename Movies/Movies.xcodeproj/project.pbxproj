@@ -29,6 +29,7 @@
 		D273D0A822F917F70081E09F /* UpcomingMoviesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D273D0A722F917F70081E09F /* UpcomingMoviesListView.xib */; };
 		D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A922F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift */; };
 		D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0AB22F920360081E09F /* UICollectionView+Reusable.swift */; };
+		D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0AD22F921E10081E09F /* UICollectionView+NibReusable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		D273D0A722F917F70081E09F /* UpcomingMoviesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMoviesListView.xib; sourceTree = "<group>"; };
 		D273D0A922F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewProtocol.swift; sourceTree = "<group>"; };
 		D273D0AB22F920360081E09F /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		D273D0AD22F921E10081E09F /* UICollectionView+NibReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+NibReusable.swift"; sourceTree = "<group>"; };
 		DA9C956FCC4F30FCAF77130D /* Pods-MoviesUITests.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (production).xcconfig"; sourceTree = "<group>"; };
 		FA7D7FDF8D2CDA24270D700C /* Pods-MoviesUITests.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.debug (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.debug (production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -313,6 +315,7 @@
 		D273D09F22F916F80081E09F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D273D0AD22F921E10081E09F /* UICollectionView+NibReusable.swift */,
 				D273D0AB22F920360081E09F /* UICollectionView+Reusable.swift */,
 				D273D0A022F917140081E09F /* UIView+NibLoadable.swift */,
 				D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */,
@@ -583,6 +586,7 @@
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
 				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
+				D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
 				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
 			);
