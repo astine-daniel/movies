@@ -11,6 +11,10 @@ platform :ios, '10.3'
 
 inhibit_all_warnings!
 
+def testing_pods
+  pod 'Nimble'
+end
+
 abstract_target 'default' do
   supports_swift_versions '>= 5.0'
 
@@ -21,10 +25,14 @@ abstract_target 'default' do
     abstract_target 'tests'
     target 'MoviesTests' do
       inherit! :search_paths
+
+      testing_pods
     end
 
     target 'MoviesUITests' do
       inherit! :search_paths
+
+      testing_pods
     end
   end
 end
@@ -42,6 +50,11 @@ def fix_deployment_target(pod_installer)
 
   project = pod_installer.pods_project
   deploymentMap = {}
+
+  if !defined? project.build_configurations
+    return
+  end
+
   project.build_configurations.each do |config|
     deploymentMap[config.name] = config.build_settings[deploymentTargetConfigName]
   end
