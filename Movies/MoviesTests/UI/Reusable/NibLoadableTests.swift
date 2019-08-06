@@ -1,11 +1,8 @@
 @testable import Movies
 
-import class Foundation.Bundle
-import class UIKit.UINib
-
-import class XCTest.XCTestCase
-
 import Nimble
+import UIKit
+import XCTest
 
 final class NibLoadableTests: XCTestCase {
     func testShouldReturnCorretBundle() {

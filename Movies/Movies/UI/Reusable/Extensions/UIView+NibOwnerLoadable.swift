@@ -1,4 +1,4 @@
-import class UIKit.UIView
+import UIKit
 
 extension NibOwnerLoadable where Self: UIView {
     func loadNibContent() {

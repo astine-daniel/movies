@@ -1,10 +1,4 @@
-import protocol UIKit.UIApplicationDelegate
-
-import class UIKit.UIApplication
-import class UIKit.UINavigationController
-import class UIKit.UIResponder
-import class UIKit.UIScreen
-import class UIKit.UIWindow
+import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {

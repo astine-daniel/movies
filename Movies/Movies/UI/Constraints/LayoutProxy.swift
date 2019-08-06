@@ -1,6 +1,4 @@
-import struct CoreGraphics.CGFloat
-import class UIKit.NSLayoutConstraint
-import class UIKit.UIView
+import UIKit
 
 // MARK: - Layout<Proxy>
 final class LayoutProxy {

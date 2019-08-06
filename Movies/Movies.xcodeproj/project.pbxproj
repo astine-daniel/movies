@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E939DE016261B275184AC4B /* libPods-MoviesUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69D1B6C3E41D4E046893637B /* libPods-MoviesUITests.a */; };
 		11EAA6F4A2ED7225A301B005 /* libPods-default-Movies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */; };
+		340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		0C313269A29C5C3F90655F7B /* Pods-MoviesUITests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (development).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (development).xcconfig"; sourceTree = "<group>"; };
 		30F008EDE9092269B9AFCB0B /* libPods-default-Movies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-default-Movies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32068EC4C98FF72277902521 /* libPods-MoviesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoviesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListLayout.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		340C2EA822F9AAD900383CC8 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EA922F9AB1600383CC8 /* UpcomingMoviesListLayout.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		34DABD4E22F891900080C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		D273D07722F8FD380081E09F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				340C2EA822F9AAD900383CC8 /* Layouts */,
 				D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */,
 			);
 			path = Controllers;
@@ -594,6 +605,7 @@
 				D273D07F22F901060081E09F /* Reusable.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
+				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayout.swift in Sources */,
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
 				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,

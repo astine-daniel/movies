@@ -1,9 +1,4 @@
-import struct CoreGraphics.CGRect
-
-import class Foundation.NSCoder
-
-import class UIKit.UIView
-import class UIKit.UICollectionView
+import UIKit
 
 final class UpcomingMoviesListView: UIView {
     // MARK: - Outlets
@@ -31,6 +26,7 @@ final class UpcomingMoviesListView: UIView {
 
 // MARK: - UpcomingMoviesListViewProtocol extension
 extension UpcomingMoviesListView: UpcomingMoviesListViewProtocol {
+    var collectionView: UICollectionView { return _collectionView }
 }
 
 // MARK: - NibOwnerLoadable extension

@@ -1,5 +1,4 @@
-import class Foundation.Bundle
-import class UIKit.UINib
+import UIKit
 
 protocol NibLoadable: AnyObject {
     static var bundle: Bundle { get }

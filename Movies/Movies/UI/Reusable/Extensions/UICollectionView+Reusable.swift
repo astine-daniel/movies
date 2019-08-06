@@ -1,8 +1,4 @@
-import struct Foundation.IndexPath
-
-import class UIKit.UICollectionReusableView
-import class UIKit.UICollectionView
-import class UIKit.UICollectionViewCell
+import UIKit
 
 extension UICollectionView {
     final func register<T: UICollectionViewCell>(cellType: T.Type)

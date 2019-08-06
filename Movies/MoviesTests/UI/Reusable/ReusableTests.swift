@@ -1,7 +1,7 @@
 @testable import Movies
 
 import Nimble
-import class XCTest.XCTestCase
+import XCTest
 
 final class ReusableTests: XCTestCase {
     func testShouldReturnCorretIdentifier() {

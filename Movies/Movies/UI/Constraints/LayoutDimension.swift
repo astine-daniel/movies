@@ -1,6 +1,4 @@
-import struct CoreGraphics.CGFloat
-import class UIKit.NSLayoutConstraint
-import class UIKit.NSLayoutDimension
+import UIKit
 
 protocol LayoutDimension: LayoutAnchor {
     func constraint(equalToConstant constant: CGFloat) -> NSLayoutConstraint
