@@ -19,6 +19,9 @@
 		D273D08822F908530081E09F /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08722F908530081E09F /* NibLoadable.swift */; };
 		D273D08A22F908800081E09F /* NibLoadableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08922F908800081E09F /* NibLoadableTests.swift */; };
 		D273D08D22F90B490081E09F /* DefaultNibLoadableImplementation.xib in Resources */ = {isa = PBXBuildFile; fileRef = D273D08C22F90B490081E09F /* DefaultNibLoadableImplementation.xib */; };
+		D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09722F913F70081E09F /* LayoutAnchor.swift */; };
+		D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09922F914060081E09F /* LayoutDimension.swift */; };
+		D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09B22F914150081E09F /* LayoutProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		D273D08722F908530081E09F /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		D273D08922F908800081E09F /* NibLoadableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableTests.swift; sourceTree = "<group>"; };
 		D273D08C22F90B490081E09F /* DefaultNibLoadableImplementation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DefaultNibLoadableImplementation.xib; sourceTree = "<group>"; };
+		D273D09722F913F70081E09F /* LayoutAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutAnchor.swift; sourceTree = "<group>"; };
+		D273D09922F914060081E09F /* LayoutDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutDimension.swift; sourceTree = "<group>"; };
+		D273D09B22F914150081E09F /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 		DA9C956FCC4F30FCAF77130D /* Pods-MoviesUITests.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (production).xcconfig"; sourceTree = "<group>"; };
 		FA7D7FDF8D2CDA24270D700C /* Pods-MoviesUITests.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.debug (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.debug (production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -237,6 +243,7 @@
 		D273D07A22F900B40081E09F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D273D09622F913DE0081E09F /* Constraints */,
 				D273D07B22F900C20081E09F /* Reusable */,
 			);
 			path = UI;
@@ -245,8 +252,8 @@
 		D273D07B22F900C20081E09F /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				D273D07E22F901060081E09F /* Reusable.swift */,
 				D273D08722F908530081E09F /* NibLoadable.swift */,
+				D273D07E22F901060081E09F /* Reusable.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -262,8 +269,8 @@
 		D273D08122F901290081E09F /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
-				D273D08222F901480081E09F /* ReusableTests.swift */,
 				D273D08922F908800081E09F /* NibLoadableTests.swift */,
+				D273D08222F901480081E09F /* ReusableTests.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -274,6 +281,16 @@
 				D273D08C22F90B490081E09F /* DefaultNibLoadableImplementation.xib */,
 			);
 			path = Resourses;
+			sourceTree = "<group>";
+		};
+		D273D09622F913DE0081E09F /* Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				D273D09722F913F70081E09F /* LayoutAnchor.swift */,
+				D273D09922F914060081E09F /* LayoutDimension.swift */,
+				D273D09B22F914150081E09F /* LayoutProxy.swift */,
+			);
+			path = Constraints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,7 +537,10 @@
 				D273D07F22F901060081E09F /* Reusable.swift in Sources */,
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
+				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,
+				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
+				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
