@@ -1,9 +1,6 @@
 import UIKit
 
-final class UpcomingMovieCollectionViewCell: UICollectionViewCell {
-    // MARK: - Properties
-    private let preferredSize = CGSize(width: 324, height: 460.0)
-
+final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
     // MARK: - IBOutlets
     @IBOutlet private var _contentView: UIView! {
         didSet {
@@ -32,14 +29,12 @@ final class UpcomingMovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var _releaseDateLabel: UILabel! {
         didSet {
             _releaseDateLabel.font = .systemFont(ofSize: 12.0, weight: .bold)
-            _releaseDateLabel.text = nil
         }
     }
 
     @IBOutlet private var _nameLabel: UILabel! {
         didSet {
             _nameLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
-            _nameLabel.text = nil
             _nameLabel.textColor = .black
         }
     }
@@ -47,7 +42,6 @@ final class UpcomingMovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet private var _genresLabel: UILabel! {
         didSet {
             _genresLabel.font = .systemFont(ofSize: 12)
-            _genresLabel.text = nil
         }
     }
 }
