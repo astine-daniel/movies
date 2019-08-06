@@ -25,6 +25,9 @@
 		D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09D22F9168D0081E09F /* NibOwnerLoadable.swift */; };
 		D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A022F917140081E09F /* UIView+NibLoadable.swift */; };
 		D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */; };
+		D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A522F917EB0081E09F /* UpcomingMoviesListView.swift */; };
+		D273D0A822F917F70081E09F /* UpcomingMoviesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D273D0A722F917F70081E09F /* UpcomingMoviesListView.xib */; };
+		D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A922F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		D273D09D22F9168D0081E09F /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		D273D0A022F917140081E09F /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
 		D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibOwnerLoadable.swift"; sourceTree = "<group>"; };
+		D273D0A522F917EB0081E09F /* UpcomingMoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListView.swift; sourceTree = "<group>"; };
+		D273D0A722F917F70081E09F /* UpcomingMoviesListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMoviesListView.xib; sourceTree = "<group>"; };
+		D273D0A922F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewProtocol.swift; sourceTree = "<group>"; };
 		DA9C956FCC4F30FCAF77130D /* Pods-MoviesUITests.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (production).xcconfig"; sourceTree = "<group>"; };
 		FA7D7FDF8D2CDA24270D700C /* Pods-MoviesUITests.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.debug (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.debug (production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D273D07722F8FD380081E09F /* Controllers */,
+				D273D0A422F917C00081E09F /* Views */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -308,6 +315,16 @@
 				D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D273D0A422F917C00081E09F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D273D0A522F917EB0081E09F /* UpcomingMoviesListView.swift */,
+				D273D0A722F917F70081E09F /* UpcomingMoviesListView.xib */,
+				D273D0A922F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +436,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D273D0A822F917F70081E09F /* UpcomingMoviesListView.xib in Resources */,
 				34DABD6522F891920080C9EF /* LaunchScreen.storyboard in Resources */,
 				34DABD6222F891920080C9EF /* Assets.xcassets in Resources */,
 			);
@@ -558,7 +576,9 @@
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
 				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
+				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
+				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
 				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
 			);

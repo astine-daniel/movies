@@ -4,8 +4,16 @@ import class UIKit.UIView
 import class UIKit.UIViewController
 
 final class UpcomingMoviesListViewController: UIViewController {
+    // MARK: - Type alias
+    typealias View = UIView & UpcomingMoviesListViewProtocol
+
+    // MARK: - Properties
+    private let _view: View
+
     // MARK: - Initializers
-    init() {
+    required init(_ view: View) {
+        self._view = view
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -16,7 +24,6 @@ final class UpcomingMoviesListViewController: UIViewController {
 
     // MARK: - View lifecycle
     override func loadView() {
-        view = UIView()
-        view.backgroundColor = .white
+        view = _view
     }
 }

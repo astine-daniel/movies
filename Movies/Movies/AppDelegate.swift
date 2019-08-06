@@ -14,7 +14,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = UINavigationController(rootViewController: UpcomingMoviesListViewController())
+        self.window?.rootViewController = UINavigationController(
+            rootViewController: UpcomingMoviesListViewController(UpcomingMoviesListView()))
+
         self.window?.makeKeyAndVisible()
 
         return true
