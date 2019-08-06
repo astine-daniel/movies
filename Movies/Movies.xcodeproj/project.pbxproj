@@ -24,6 +24,7 @@
 		D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09B22F914150081E09F /* LayoutProxy.swift */; };
 		D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D09D22F9168D0081E09F /* NibOwnerLoadable.swift */; };
 		D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A022F917140081E09F /* UIView+NibLoadable.swift */; };
+		D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		D273D09B22F914150081E09F /* LayoutProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutProxy.swift; sourceTree = "<group>"; };
 		D273D09D22F9168D0081E09F /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
 		D273D0A022F917140081E09F /* UIView+NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibLoadable.swift"; sourceTree = "<group>"; };
+		D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NibOwnerLoadable.swift"; sourceTree = "<group>"; };
 		DA9C956FCC4F30FCAF77130D /* Pods-MoviesUITests.release (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.release (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.release (production).xcconfig"; sourceTree = "<group>"; };
 		FA7D7FDF8D2CDA24270D700C /* Pods-MoviesUITests.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesUITests.debug (production).xcconfig"; path = "Target Support Files/Pods-MoviesUITests/Pods-MoviesUITests.debug (production).xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				D273D0A022F917140081E09F /* UIView+NibLoadable.swift */,
+				D273D0A222F9175E0081E09F /* UIView+NibOwnerLoadable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -554,6 +557,7 @@
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
 				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,
+				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
 				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
