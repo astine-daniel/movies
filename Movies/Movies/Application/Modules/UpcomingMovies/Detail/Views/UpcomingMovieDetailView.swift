@@ -18,6 +18,18 @@ final class UpcomingMovieDetailView: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    // MARK: - Outlets
+    @IBOutlet private var _contentView: UIView!
+    @IBOutlet private var _scrollView: UIScrollView!
+    @IBOutlet private var _scrollContentView: UIView!
+
+    @IBOutlet private var _posterImageView: UIImageView!
+    @IBOutlet private var _titleLabel: UILabel!
+    @IBOutlet private var _releaseDateLabel: UILabel!
+    @IBOutlet private var _genresLabel: UILabel!
+    @IBOutlet private var _overviewLabel: UILabel!
+    @IBOutlet private var _overviewContentLabel: UILabel!
 }
 
 // MARK: - NibOwnerLoadable extension

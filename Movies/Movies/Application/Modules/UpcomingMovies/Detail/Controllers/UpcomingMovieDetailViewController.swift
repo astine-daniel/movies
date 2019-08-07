@@ -13,7 +13,7 @@ final class UpcomingMovieDetailViewController: UIViewController {
 
     // MARK: - View lifecycle
     override func loadView() {
-        view = UIView()
+        view = UpcomingMovieDetailView()
         view.backgroundColor = .white
     }
 
