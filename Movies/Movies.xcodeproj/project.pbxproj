@@ -32,6 +32,8 @@
 		340C2EEE22FB55AC00383CC8 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EED22FB55AC00383CC8 /* URLSessionProtocol.swift */; };
 		340C2EF722FB578D00383CC8 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EF622FB578D00383CC8 /* HTTPMethod.swift */; };
 		340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EF822FB57B200383CC8 /* HTTPContentType.swift */; };
+		340C2EFC22FB594200383CC8 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EFB22FB594200383CC8 /* HTTPHeader.swift */; };
+		340C2EFE22FB598D00383CC8 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -107,6 +109,8 @@
 		340C2EED22FB55AC00383CC8 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		340C2EF622FB578D00383CC8 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		340C2EF822FB57B200383CC8 /* HTTPContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPContentType.swift; sourceTree = "<group>"; };
+		340C2EFB22FB594200383CC8 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -368,10 +372,20 @@
 		340C2EF222FB566D00383CC8 /* HTTP */ = {
 			isa = PBXGroup;
 			children = (
+				340C2EFA22FB593300383CC8 /* Header */,
 				340C2EF822FB57B200383CC8 /* HTTPContentType.swift */,
 				340C2EF622FB578D00383CC8 /* HTTPMethod.swift */,
 			);
 			path = HTTP;
+			sourceTree = "<group>";
+		};
+		340C2EFA22FB593300383CC8 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EFB22FB594200383CC8 /* HTTPHeader.swift */,
+				340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		34DABD4E22F891900080C9EF = {
@@ -878,6 +892,7 @@
 				340C2ED022FB022700383CC8 /* NavigationRouterProtocol.swift in Sources */,
 				340C2ED422FB027200383CC8 /* NavigationRouter.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
+				340C2EFC22FB594200383CC8 /* HTTPHeader.swift in Sources */,
 				340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */,
 				340C2EEC22FB554A00383CC8 /* URLRequestConvertible.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
@@ -896,6 +911,7 @@
 				340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */,
 				340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
+				340C2EFE22FB598D00383CC8 /* HTTPHeaders.swift in Sources */,
 				340C2EDC22FB046700383CC8 /* UIViewController+Presentable.swift in Sources */,
 				D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
