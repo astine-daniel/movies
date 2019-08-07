@@ -21,6 +21,7 @@
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
 		34DABD6522F891920080C9EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6322F891920080C9EF /* LaunchScreen.storyboard */; };
 		D241AE6B22FA5AA4008BD230 /* UpcomingMovieDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D241AE6A22FA5AA4008BD230 /* UpcomingMovieDetailView.xib */; };
+		D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE6D22FA7071008BD230 /* NavigationController.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -96,6 +97,7 @@
 		CD1E5C20A5E51CCF9EE2DDB2 /* Pods-MoviesTests.debug (production).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.debug (production).xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.debug (production).xcconfig"; sourceTree = "<group>"; };
 		D052C113225E454EA5F2F819 /* Pods-MoviesTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release (development).xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		D241AE6A22FA5AA4008BD230 /* UpcomingMovieDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMovieDetailView.xib; sourceTree = "<group>"; };
+		D241AE6D22FA7071008BD230 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -322,6 +324,14 @@
 			path = ../Pods;
 			sourceTree = "<group>";
 		};
+		D241AE6C22FA7055008BD230 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D241AE6D22FA7071008BD230 /* NavigationController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,6 +378,7 @@
 		D273D07A22F900B40081E09F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D241AE6C22FA7055008BD230 /* Controllers */,
 				D273D07B22F900C20081E09F /* Reusable */,
 				340C2EAB22F9B6E600383CC8 /* Views */,
 			);
@@ -710,6 +721,7 @@
 				340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */,
 				D273D0B122F9227D0081E09F /* UpcomingMovieCollectionViewCell.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
+				D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
 				340C2EC322FA058200383CC8 /* UpcomingMovieDetailView.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,

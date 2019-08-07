@@ -10,7 +10,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
         let listController = UpcomingMoviesListViewController(UpcomingMoviesListView())
-        let navigationController = UINavigationController(rootViewController: listController)
+        let navigationController = NavigationController(rootViewController: listController)
         self.window?.rootViewController = navigationController
 
         listController.didSelectUpcomingMovie.delegate { _ in
