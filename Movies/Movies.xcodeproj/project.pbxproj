@@ -22,6 +22,8 @@
 		34DABD6522F891920080C9EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6322F891920080C9EF /* LaunchScreen.storyboard */; };
 		D241AE6B22FA5AA4008BD230 /* UpcomingMovieDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D241AE6A22FA5AA4008BD230 /* UpcomingMovieDetailView.xib */; };
 		D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE6D22FA7071008BD230 /* NavigationController.swift */; };
+		D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */; };
+		D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7222FA74B2008BD230 /* Coordinator.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -98,6 +100,8 @@
 		D052C113225E454EA5F2F819 /* Pods-MoviesTests.release (development).xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoviesTests.release (development).xcconfig"; path = "Target Support Files/Pods-MoviesTests/Pods-MoviesTests.release (development).xcconfig"; sourceTree = "<group>"; };
 		D241AE6A22FA5AA4008BD230 /* UpcomingMovieDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpcomingMovieDetailView.xib; sourceTree = "<group>"; };
 		D241AE6D22FA7071008BD230 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
+		D241AE7222FA74B2008BD230 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 		340C2EBF22F9F19100383CC8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D241AE6F22FA745C008BD230 /* Coordinator */,
 				340C2EBD22F9F17200383CC8 /* Delegated.swift */,
 				340C2EC022F9F1A400383CC8 /* OptionalType.swift */,
 			);
@@ -330,6 +335,15 @@
 				D241AE6D22FA7071008BD230 /* NavigationController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D241AE6F22FA745C008BD230 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */,
+				D241AE7222FA74B2008BD230 /* Coordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -708,6 +722,7 @@
 			files = (
 				D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
+				D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */,
 				D273D07F22F901060081E09F /* Reusable.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
@@ -727,6 +742,7 @@
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
 				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
 				D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */,
+				D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
 				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
 			);
