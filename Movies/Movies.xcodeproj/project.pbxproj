@@ -16,6 +16,14 @@
 		340C2EBE22F9F17200383CC8 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EBD22F9F17200383CC8 /* Delegated.swift */; };
 		340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EC022F9F1A400383CC8 /* OptionalType.swift */; };
 		340C2EC322FA058200383CC8 /* UpcomingMovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EC222FA058200383CC8 /* UpcomingMovieDetailView.swift */; };
+		340C2EC822FB014900383CC8 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EC722FB014900383CC8 /* RouterProtocol.swift */; };
+		340C2ECB22FB016B00383CC8 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ECA22FB016B00383CC8 /* Presentable.swift */; };
+		340C2ECD22FB01ED00383CC8 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ECC22FB01ED00383CC8 /* Router.swift */; };
+		340C2ED022FB022700383CC8 /* NavigationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ECF22FB022700383CC8 /* NavigationRouterProtocol.swift */; };
+		340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ED122FB023F00383CC8 /* NavigationRouterBackAnimation.swift */; };
+		340C2ED422FB027200383CC8 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ED322FB027200383CC8 /* NavigationRouter.swift */; };
+		340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ED922FB044400383CC8 /* ScreenProtocol+UIKit.swift */; };
+		340C2EDC22FB046700383CC8 /* UIViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EDB22FB046700383CC8 /* UIViewController+Presentable.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -24,7 +32,7 @@
 		D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE6D22FA7071008BD230 /* NavigationController.swift */; };
 		D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */; };
 		D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7222FA74B2008BD230 /* Coordinator.swift */; };
-		D241AE7622FA766E008BD230 /* ScreenPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */; };
+		D241AE7622FA766E008BD230 /* ScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7522FA766E008BD230 /* ScreenProtocol.swift */; };
 		D241AE7822FA7692008BD230 /* ScreenPresentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
@@ -75,6 +83,14 @@
 		340C2EBD22F9F17200383CC8 /* Delegated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		340C2EC022F9F1A400383CC8 /* OptionalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalType.swift; sourceTree = "<group>"; };
 		340C2EC222FA058200383CC8 /* UpcomingMovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMovieDetailView.swift; sourceTree = "<group>"; };
+		340C2EC722FB014900383CC8 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		340C2ECA22FB016B00383CC8 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		340C2ECC22FB01ED00383CC8 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		340C2ECF22FB022700383CC8 /* NavigationRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterProtocol.swift; sourceTree = "<group>"; };
+		340C2ED122FB023F00383CC8 /* NavigationRouterBackAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterBackAnimation.swift; sourceTree = "<group>"; };
+		340C2ED322FB027200383CC8 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		340C2ED922FB044400383CC8 /* ScreenProtocol+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenProtocol+UIKit.swift"; sourceTree = "<group>"; };
+		340C2EDB22FB046700383CC8 /* UIViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presentable.swift"; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -104,7 +120,7 @@
 		D241AE6D22FA7071008BD230 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		D241AE7222FA74B2008BD230 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPresenterProtocol.swift; sourceTree = "<group>"; };
+		D241AE7522FA766E008BD230 /* ScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenProtocol.swift; sourceTree = "<group>"; };
 		D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPresentStyle.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
@@ -242,6 +258,52 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		340C2EC622FB011E00383CC8 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				340C2ED722FB03C400383CC8 /* Extensions */,
+				340C2ECE22FB021400383CC8 /* Navigation */,
+				340C2ECC22FB01ED00383CC8 /* Router.swift */,
+				340C2EC722FB014900383CC8 /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		340C2EC922FB015A00383CC8 /* Presentable */ = {
+			isa = PBXGroup;
+			children = (
+				340C2ECA22FB016B00383CC8 /* Presentable.swift */,
+			);
+			path = Presentable;
+			sourceTree = "<group>";
+		};
+		340C2ECE22FB021400383CC8 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				340C2ED322FB027200383CC8 /* NavigationRouter.swift */,
+				340C2ED122FB023F00383CC8 /* NavigationRouterBackAnimation.swift */,
+				340C2ECF22FB022700383CC8 /* NavigationRouterProtocol.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		340C2ED722FB03C400383CC8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				340C2ED822FB042400383CC8 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		340C2ED822FB042400383CC8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				340C2ED922FB044400383CC8 /* ScreenProtocol+UIKit.swift */,
+				340C2EDB22FB046700383CC8 /* UIViewController+Presentable.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		34DABD4E22F891900080C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -344,20 +406,22 @@
 		D241AE6F22FA745C008BD230 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D241AE7422FA764F008BD230 /* ScreenPresenter */,
+				340C2EC922FB015A00383CC8 /* Presentable */,
+				D241AE7422FA764F008BD230 /* Screen */,
+				340C2EC622FB011E00383CC8 /* Router */,
 				D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */,
 				D241AE7222FA74B2008BD230 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		D241AE7422FA764F008BD230 /* ScreenPresenter */ = {
+		D241AE7422FA764F008BD230 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */,
+				D241AE7522FA766E008BD230 /* ScreenProtocol.swift */,
 				D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */,
 			);
-			path = ScreenPresenter;
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -738,6 +802,8 @@
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */,
 				D273D07F22F901060081E09F /* Reusable.swift in Sources */,
+				340C2ED022FB022700383CC8 /* NavigationRouterProtocol.swift in Sources */,
+				340C2ED422FB027200383CC8 /* NavigationRouter.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
 				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift in Sources */,
@@ -748,18 +814,24 @@
 				340C2EBA22F9F07300383CC8 /* UpcomingMovieDetailViewController.swift in Sources */,
 				340C2EAE22F9B7B400383CC8 /* CardCollectionViewCell.swift in Sources */,
 				340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */,
+				340C2EC822FB014900383CC8 /* RouterProtocol.swift in Sources */,
 				D273D0B122F9227D0081E09F /* UpcomingMovieCollectionViewCell.swift in Sources */,
+				340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */,
+				340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
+				340C2EDC22FB046700383CC8 /* UIViewController+Presentable.swift in Sources */,
 				D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
 				D241AE7822FA7692008BD230 /* ScreenPresentStyle.swift in Sources */,
 				340C2EC322FA058200383CC8 /* UpcomingMovieDetailView.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
-				D241AE7622FA766E008BD230 /* ScreenPresenterProtocol.swift in Sources */,
+				340C2ECD22FB01ED00383CC8 /* Router.swift in Sources */,
+				D241AE7622FA766E008BD230 /* ScreenProtocol.swift in Sources */,
 				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
 				D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */,
 				D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
+				340C2ECB22FB016B00383CC8 /* Presentable.swift in Sources */,
 				D273D09822F913F70081E09F /* LayoutAnchor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
