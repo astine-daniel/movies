@@ -24,6 +24,8 @@
 		340C2ED422FB027200383CC8 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ED322FB027200383CC8 /* NavigationRouter.swift */; };
 		340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2ED922FB044400383CC8 /* ScreenProtocol+UIKit.swift */; };
 		340C2EDC22FB046700383CC8 /* UIViewController+Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EDB22FB046700383CC8 /* UIViewController+Presentable.swift */; };
+		340C2EE122FB07D500383CC8 /* UpcomingMoviesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EE022FB07D500383CC8 /* UpcomingMoviesCoordinator.swift */; };
+		340C2EE322FB0A1800383CC8 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EE222FB0A1800383CC8 /* ApplicationCoordinator.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		340C2ED322FB027200383CC8 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		340C2ED922FB044400383CC8 /* ScreenProtocol+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenProtocol+UIKit.swift"; sourceTree = "<group>"; };
 		340C2EDB22FB046700383CC8 /* UIViewController+Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Presentable.swift"; sourceTree = "<group>"; };
+		340C2EE022FB07D500383CC8 /* UpcomingMoviesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesCoordinator.swift; sourceTree = "<group>"; };
+		340C2EE222FB0A1800383CC8 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -304,6 +308,30 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
+		340C2EDD22FB066D00383CC8 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EDE22FB067C00383CC8 /* UpcomingMovies */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		340C2EDE22FB067C00383CC8 /* UpcomingMovies */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EDF22FB07C400383CC8 /* Coordinator */,
+			);
+			path = UpcomingMovies;
+			sourceTree = "<group>";
+		};
+		340C2EDF22FB07C400383CC8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				340C2EE022FB07D500383CC8 /* UpcomingMoviesCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		34DABD4E22F891900080C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +455,9 @@
 		D273D07322F8FCDE0081E09F /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				340C2EDD22FB066D00383CC8 /* Flows */,
 				D273D07422F8FD0C0081E09F /* Modules */,
+				340C2EE222FB0A1800383CC8 /* ApplicationCoordinator.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -816,6 +846,7 @@
 				340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */,
 				340C2EC822FB014900383CC8 /* RouterProtocol.swift in Sources */,
 				D273D0B122F9227D0081E09F /* UpcomingMovieCollectionViewCell.swift in Sources */,
+				340C2EE322FB0A1800383CC8 /* ApplicationCoordinator.swift in Sources */,
 				340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */,
 				340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
@@ -829,6 +860,7 @@
 				D241AE7622FA766E008BD230 /* ScreenProtocol.swift in Sources */,
 				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
 				D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */,
+				340C2EE122FB07D500383CC8 /* UpcomingMoviesCoordinator.swift in Sources */,
 				D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
 				340C2ECB22FB016B00383CC8 /* Presentable.swift in Sources */,

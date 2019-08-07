@@ -2,6 +2,11 @@ import UIKit
 
 @UIApplicationMain
 final class AppDelegate: UIResponder, UIApplicationDelegate {
+    // MARK: - Properties
+    private lazy var applicationCoordinator = {
+        return ApplicationCoordinator(router: Router(rootScreen: self.window!))
+    }()
+
     var window: UIWindow?
 
     func application(
@@ -9,13 +14,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
 
-        let listController = UpcomingMoviesListViewController(UpcomingMoviesListView())
-        let navigationController = NavigationController(rootViewController: listController)
-        self.window?.rootViewController = navigationController
-
-        listController.didSelectUpcomingMovie.delegate { _ in
-            navigationController.pushViewController(UpcomingMovieDetailViewController(), animated: true)
-        }
+        applicationCoordinator.start()
 
         self.window?.makeKeyAndVisible()
 
