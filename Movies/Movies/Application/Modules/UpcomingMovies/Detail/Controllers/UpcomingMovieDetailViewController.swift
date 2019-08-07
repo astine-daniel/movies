@@ -27,5 +27,6 @@ final class UpcomingMovieDetailViewController: UIViewController {
 // MARK: - Private extension
 private extension UpcomingMovieDetailViewController {
     func setupView() {
+        title = "Movie"
     }
 }

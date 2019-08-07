@@ -51,6 +51,8 @@ extension UpcomingMoviesListViewController: UICollectionViewDataSource {
 // MARK: - Private extension
 private extension UpcomingMoviesListViewController {
     func setupView() {
+        title = "Movies"
+
         _view.collectionView.dataSource = self
         _view.collectionView.delegate = _layoutDelegate
 
