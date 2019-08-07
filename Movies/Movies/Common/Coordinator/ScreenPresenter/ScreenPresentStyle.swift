@@ -1,8 +1,5 @@
-//
-//  ScreenPresentStyle.swift
-//  Movies
-//
-//  Created by Daniel Astine on 07/08/19.
-//
-
-import Foundation
+enum ScreenPresentStyle {
+    case modal(animated: Bool)
+    case show(animated: Bool)
+    case main(animated: Bool)
+}

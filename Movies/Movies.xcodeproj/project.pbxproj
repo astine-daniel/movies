@@ -24,6 +24,8 @@
 		D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE6D22FA7071008BD230 /* NavigationController.swift */; };
 		D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */; };
 		D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7222FA74B2008BD230 /* Coordinator.swift */; };
+		D241AE7622FA766E008BD230 /* ScreenPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */; };
+		D241AE7822FA7692008BD230 /* ScreenPresentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -102,6 +104,8 @@
 		D241AE6D22FA7071008BD230 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorProtocol.swift; sourceTree = "<group>"; };
 		D241AE7222FA74B2008BD230 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPresenterProtocol.swift; sourceTree = "<group>"; };
+		D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenPresentStyle.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -340,10 +344,20 @@
 		D241AE6F22FA745C008BD230 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				D241AE7422FA764F008BD230 /* ScreenPresenter */,
 				D241AE7022FA7483008BD230 /* CoordinatorProtocol.swift */,
 				D241AE7222FA74B2008BD230 /* Coordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D241AE7422FA764F008BD230 /* ScreenPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				D241AE7522FA766E008BD230 /* ScreenPresenterProtocol.swift */,
+				D241AE7722FA7692008BD230 /* ScreenPresentStyle.swift */,
+			);
+			path = ScreenPresenter;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -738,8 +752,10 @@
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
 				D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
+				D241AE7822FA7692008BD230 /* ScreenPresentStyle.swift in Sources */,
 				340C2EC322FA058200383CC8 /* UpcomingMovieDetailView.swift in Sources */,
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
+				D241AE7622FA766E008BD230 /* ScreenPresenterProtocol.swift in Sources */,
 				D273D0AA22F918DA0081E09F /* UpcomingMoviesListViewProtocol.swift in Sources */,
 				D273D0AE22F921E10081E09F /* UICollectionView+NibReusable.swift in Sources */,
 				D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */,
