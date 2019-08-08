@@ -57,6 +57,7 @@
 		D241AE9C22FBA3CB008BD230 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE9B22FBA3CB008BD230 /* URLEncodedFormEncoder.swift */; };
 		D241AE9E22FBA41C008BD230 /* URLEncodedFormParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE9D22FBA41C008BD230 /* URLEncodedFormParameterEncoder.swift */; };
 		D241AEA122FBA470008BD230 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEA022FBA470008BD230 /* ParameterEncoding.swift */; };
+		D241AEA322FBA49D008BD230 /* JSONEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEA222FBA49D008BD230 /* JSONEncoding.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -168,6 +169,7 @@
 		D241AE9B22FBA3CB008BD230 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		D241AE9D22FBA41C008BD230 /* URLEncodedFormParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedFormParameterEncoder.swift; sourceTree = "<group>"; };
 		D241AEA022FBA470008BD230 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		D241AEA222FBA49D008BD230 /* JSONEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONEncoding.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -630,6 +632,7 @@
 		D241AE9F22FBA456008BD230 /* Encoding */ = {
 			isa = PBXGroup;
 			children = (
+				D241AEA222FBA49D008BD230 /* JSONEncoding.swift */,
 				D241AEA022FBA470008BD230 /* ParameterEncoding.swift */,
 			);
 			path = Encoding;
@@ -1023,6 +1026,7 @@
 				340C2ED022FB022700383CC8 /* NavigationRouterProtocol.swift in Sources */,
 				340C2ED422FB027200383CC8 /* NavigationRouter.swift in Sources */,
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
+				D241AEA322FBA49D008BD230 /* JSONEncoding.swift in Sources */,
 				340C2EFC22FB594200383CC8 /* HTTPHeader.swift in Sources */,
 				340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */,
 				340C2EEC22FB554A00383CC8 /* URLRequestConvertible.swift in Sources */,
