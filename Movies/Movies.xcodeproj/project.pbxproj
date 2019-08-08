@@ -49,6 +49,7 @@
 		D241AE8122FB9DBA008BD230 /* URLFormComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE8022FB9DBA008BD230 /* URLFormComponent.swift */; };
 		D241AE8522FB9E43008BD230 /* URLFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE8422FB9E43008BD230 /* URLFormEncoder.swift */; };
 		D241AE8822FB9F7D008BD230 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE8722FB9F7D008BD230 /* Endpoint.swift */; };
+		D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE8A22FBA008008BD230 /* ResourceParameters.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -152,6 +153,7 @@
 		D241AE8022FB9DBA008BD230 /* URLFormComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormComponent.swift; sourceTree = "<group>"; };
 		D241AE8422FB9E43008BD230 /* URLFormEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLFormEncoder.swift; sourceTree = "<group>"; };
 		D241AE8722FB9F7D008BD230 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		D241AE8A22FBA008008BD230 /* ResourceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceParameters.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -550,9 +552,18 @@
 		D241AE8622FB9F63008BD230 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				D241AE8922FB9FF2008BD230 /* Parameters */,
 				D241AE8722FB9F7D008BD230 /* Endpoint.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		D241AE8922FB9FF2008BD230 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				D241AE8A22FBA008008BD230 /* ResourceParameters.swift */,
+			);
+			path = Parameters;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -931,6 +942,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */,
 				D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				D241AE7F22FB9D31008BD230 /* URLFormEncoding.swift in Sources */,
