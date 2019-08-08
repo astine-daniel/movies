@@ -52,6 +52,7 @@
 		D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE8A22FBA008008BD230 /* ResourceParameters.swift */; };
 		D241AE9122FBA0D1008BD230 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE9022FBA0D1008BD230 /* ParameterEncoder.swift */; };
 		D241AE9422FBA13B008BD230 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE9322FBA13B008BD230 /* JSONParameterEncoder.swift */; };
+		D241AE9722FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AE9622FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -158,6 +159,7 @@
 		D241AE8A22FBA008008BD230 /* ResourceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceParameters.swift; sourceTree = "<group>"; };
 		D241AE9022FBA0D1008BD230 /* ParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
 		D241AE9322FBA13B008BD230 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		D241AE9622FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncodedFormEncoderProtocol.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -583,6 +585,7 @@
 			isa = PBXGroup;
 			children = (
 				D241AE9222FBA129008BD230 /* JSON */,
+				D241AE9522FBA32C008BD230 /* URL */,
 				D241AE9022FBA0D1008BD230 /* ParameterEncoder.swift */,
 			);
 			path = Encoder;
@@ -594,6 +597,14 @@
 				D241AE9322FBA13B008BD230 /* JSONParameterEncoder.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		D241AE9522FBA32C008BD230 /* URL */ = {
+			isa = PBXGroup;
+			children = (
+				D241AE9622FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift */,
+			);
+			path = URL;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -999,6 +1010,7 @@
 				340C2EC122F9F1A400383CC8 /* OptionalType.swift in Sources */,
 				340C2EC822FB014900383CC8 /* RouterProtocol.swift in Sources */,
 				D241AE8822FB9F7D008BD230 /* Endpoint.swift in Sources */,
+				D241AE9722FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift in Sources */,
 				D273D0B122F9227D0081E09F /* UpcomingMovieCollectionViewCell.swift in Sources */,
 				340C2EE322FB0A1800383CC8 /* ApplicationCoordinator.swift in Sources */,
 				340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */,
