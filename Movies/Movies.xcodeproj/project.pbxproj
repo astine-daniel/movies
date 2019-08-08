@@ -62,6 +62,7 @@
 		D241AEA822FBA530008BD230 /* URLRequest+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEA722FBA530008BD230 /* URLRequest+Networking.swift */; };
 		D241AEAD22FBA5E7008BD230 /* ResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */; };
 		D241AEAF22FBA61C008BD230 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEAE22FBA61C008BD230 /* Resource.swift */; };
+		D241AEB922FBA7D3008BD230 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEB822FBA7D3008BD230 /* Request.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -178,6 +179,7 @@
 		D241AEA722FBA530008BD230 /* URLRequest+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Networking.swift"; sourceTree = "<group>"; };
 		D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceParser.swift; sourceTree = "<group>"; };
 		D241AEAE22FBA61C008BD230 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		D241AEB822FBA7D3008BD230 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 				D241AE7922FB9864008BD230 /* Encoder */,
 				D241AEA622FBA508008BD230 /* Extensions */,
 				340C2EF222FB566D00383CC8 /* HTTP */,
+				D241AEB722FBA7C2008BD230 /* Request */,
 				D241AE8622FB9F63008BD230 /* Resource */,
 				340C2EE622FB52BB00383CC8 /* URL */,
 				340C2EE922FB532B00383CC8 /* NetworkingError.swift */,
@@ -664,6 +667,14 @@
 				D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */,
 			);
 			path = Parser;
+			sourceTree = "<group>";
+		};
+		D241AEB722FBA7C2008BD230 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D241AEB822FBA7D3008BD230 /* Request.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -1059,6 +1070,7 @@
 				340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */,
 				340C2EEC22FB554A00383CC8 /* URLRequestConvertible.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
+				D241AEB922FBA7D3008BD230 /* Request.swift in Sources */,
 				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift in Sources */,
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
