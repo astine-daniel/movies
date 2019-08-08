@@ -34,6 +34,7 @@
 		340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EF822FB57B200383CC8 /* HTTPContentType.swift */; };
 		340C2EFC22FB594200383CC8 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EFB22FB594200383CC8 /* HTTPHeader.swift */; };
 		340C2EFE22FB598D00383CC8 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */; };
+		340C2F0522FC4AA100383CC8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0422FC4AA100383CC8 /* ProjectInfo.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -136,6 +137,7 @@
 		340C2EF822FB57B200383CC8 /* HTTPContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPContentType.swift; sourceTree = "<group>"; };
 		340C2EFB22FB594200383CC8 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
+		340C2F0422FC4AA100383CC8 /* ProjectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				D241AE6F22FA745C008BD230 /* Coordinator */,
+				340C2F0322FC4A6E00383CC8 /* Environment */,
 				340C2EE522FB51E800383CC8 /* Networking */,
 				340C2EBD22F9F17200383CC8 /* Delegated.swift */,
 				340C2EC022F9F1A400383CC8 /* OptionalType.swift */,
@@ -443,6 +446,14 @@
 				340C2EFD22FB598D00383CC8 /* HTTPHeaders.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		340C2F0322FC4A6E00383CC8 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F0422FC4AA100383CC8 /* ProjectInfo.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		34DABD4E22F891900080C9EF = {
@@ -1115,6 +1126,7 @@
 				D273D09E22F9168D0081E09F /* NibOwnerLoadable.swift in Sources */,
 				D241AEA322FBA49D008BD230 /* JSONEncoding.swift in Sources */,
 				340C2EFC22FB594200383CC8 /* HTTPHeader.swift in Sources */,
+				340C2F0522FC4AA100383CC8 /* ProjectInfo.swift in Sources */,
 				340C2EF922FB57B200383CC8 /* HTTPContentType.swift in Sources */,
 				340C2EEC22FB554A00383CC8 /* URLRequestConvertible.swift in Sources */,
 				D273D0A122F917140081E09F /* UIView+NibLoadable.swift in Sources */,
