@@ -86,6 +86,12 @@ bundle exec pod install
 
 A tool to enforce Swift style and conventions.
 
+### [Sourcery](https://github.com/krzysztofzablocki/Sourcery)
+
+A code generator for Swift language, built on top of Apple's own SourceKit.
+It extends the language abstractions to allow you to generate boilerplate
+code automatically.
+
 ### [Nimble](https://github.com/Quick/Nimble)
 
 A Matcher Framework for Swift and Objective-C
