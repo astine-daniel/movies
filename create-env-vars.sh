@@ -8,5 +8,5 @@ else
 fi
 
 dir=$(CDPATH=" cd -- $(dirname -- "$0")" && pwd)
-printf "%s\n\nexport APIKEY=%s\n" "#!/bin/sh" "$apiKey" > "$dir"/env-vars.sh
+printf "%s\n\nexport API_KEY=%s\n" "#!/bin/sh" "$apiKey" > "$dir"/env-vars.sh
 chmod +x "$dir"/env-vars.sh
