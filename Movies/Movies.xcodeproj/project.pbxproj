@@ -68,6 +68,7 @@
 		D241AEBF22FBA89B008BD230 /* EncodableResourceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEBE22FBA89B008BD230 /* EncodableResourceParameters.swift */; };
 		D241AEC122FBA8E2008BD230 /* ClosureResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */; };
 		D241AEC322FBA961008BD230 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEC222FBA961008BD230 /* APIService.swift */; };
+		D241AECC22FBCFA9008BD230 /* Credentials.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AECB22FBCFA9008BD230 /* Credentials.generated.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -190,6 +191,7 @@
 		D241AEBE22FBA89B008BD230 /* EncodableResourceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableResourceParameters.swift; sourceTree = "<group>"; };
 		D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureResourceParser.swift; sourceTree = "<group>"; };
 		D241AEC222FBA961008BD230 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D241AECB22FBCFA9008BD230 /* Credentials.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.generated.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 			children = (
 				D273D07322F8FCDE0081E09F /* Application */,
 				340C2EBF22F9F19100383CC8 /* Common */,
+				D241AEC622FBC35D008BD230 /* Generated */,
 				340C2EAF22F9BC7D00383CC8 /* Shared */,
 				D273D07A22F900B40081E09F /* UI */,
 				34DABD5A22F891900080C9EF /* AppDelegate.swift */,
@@ -692,6 +695,14 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		D241AEC622FBC35D008BD230 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D241AECB22FBCFA9008BD230 /* Credentials.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -832,6 +843,7 @@
 			buildConfigurationList = 34DABD7F22F891920080C9EF /* Build configuration list for PBXNativeTarget "Movies" */;
 			buildPhases = (
 				6CB33EAC30E7FFB4EDF17668 /* [CP] Check Pods Manifest.lock */,
+				D241AEC822FBCC17008BD230 /* Generate Credentials */,
 				34DABD5322F891900080C9EF /* Sources */,
 				34DABD5422F891900080C9EF /* Frameworks */,
 				34DABD5522F891900080C9EF /* Resources */,
@@ -1021,6 +1033,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D241AEC822FBCC17008BD230 /* Generate Credentials */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Credentials";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SRCROOT)/$(PROJECT_NAME)/Generated/Credentials.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/sh\n\n. \"${SRCROOT}\"/../Configuration/Sourcery/sourcery.sh\n\ntouch .alwaysRun && rm -f .alwaysRun\n";
+		};
 		D273D08622F902CF0081E09F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1091,6 +1122,7 @@
 				340C2EAA22F9AB1600383CC8 /* UpcomingMoviesListLayoutDelegate.swift in Sources */,
 				D273D08822F908530081E09F /* NibLoadable.swift in Sources */,
 				D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */,
+				D241AECC22FBCFA9008BD230 /* Credentials.generated.swift in Sources */,
 				340C2EE822FB52D000383CC8 /* URLConvertible.swift in Sources */,
 				D241AE8522FB9E43008BD230 /* URLFormEncoder.swift in Sources */,
 				D273D09A22F914060081E09F /* LayoutDimension.swift in Sources */,

@@ -1,0 +1,7 @@
+sources:
+  - "${SRCROOT}/${PROJECT_NAME}"
+templates:
+  - "${SRCROOT}/../Configuration/Sourcery/Templates/"
+output: "${SRCROOT}/${PROJECT_NAME}/Generated"
+args:
+  apiKey: "${API_KEY}"
