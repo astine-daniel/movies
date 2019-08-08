@@ -63,6 +63,7 @@
 		D241AEAD22FBA5E7008BD230 /* ResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */; };
 		D241AEAF22FBA61C008BD230 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEAE22FBA61C008BD230 /* Resource.swift */; };
 		D241AEB922FBA7D3008BD230 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEB822FBA7D3008BD230 /* Request.swift */; };
+		D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEBA22FBA829008BD230 /* APIServiceProtocol.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -180,6 +181,7 @@
 		D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceParser.swift; sourceTree = "<group>"; };
 		D241AEAE22FBA61C008BD230 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		D241AEB822FBA7D3008BD230 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		D241AEBA22FBA829008BD230 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				D241AE8622FB9F63008BD230 /* Resource */,
 				340C2EE622FB52BB00383CC8 /* URL */,
 				340C2EE922FB532B00383CC8 /* NetworkingError.swift */,
+				D241AEBA22FBA829008BD230 /* APIServiceProtocol.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1056,6 +1059,7 @@
 				D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */,
 				D241AE9422FBA13B008BD230 /* JSONParameterEncoder.swift in Sources */,
 				D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */,
+				D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				D241AE7F22FB9D31008BD230 /* URLFormEncoding.swift in Sources */,
 				340C2EF722FB578D00383CC8 /* HTTPMethod.swift in Sources */,
