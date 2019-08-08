@@ -1,20 +1,24 @@
 PODS:
   - Nimble (8.0.2)
+  - Sourcery (0.16.2)
   - SwiftLint (0.34.0)
 
 DEPENDENCIES:
   - Nimble
+  - Sourcery
   - SwiftLint
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Nimble
+    - Sourcery
     - SwiftLint
 
 SPEC CHECKSUMS:
   Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
 
-PODFILE CHECKSUM: 6d364342dc48197ea969f0b88de1ea61233e49b4
+PODFILE CHECKSUM: 9c7ccefb79d8e01198cf02b750b628b222a54dea
 
 COCOAPODS: 1.7.5

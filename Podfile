@@ -21,6 +21,9 @@ abstract_target 'default' do
   # Lint
   pod 'SwiftLint'
 
+  # Sourcery
+  pod 'Sourcery'
+
   target 'Movies' do
     abstract_target 'tests'
     target 'MoviesTests' do
