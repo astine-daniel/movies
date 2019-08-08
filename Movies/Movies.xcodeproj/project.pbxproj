@@ -37,6 +37,8 @@
 		340C2F0522FC4AA100383CC8 /* ProjectInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0422FC4AA100383CC8 /* ProjectInfo.swift */; };
 		340C2F0722FC4AD200383CC8 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0622FC4AD200383CC8 /* Configuration.swift */; };
 		340C2F0922FC4B0600383CC8 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0822FC4B0600383CC8 /* Environment.swift */; };
+		340C2F0E22FC617500383CC8 /* APIServiceInfoProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0D22FC617500383CC8 /* APIServiceInfoProtocol.swift */; };
+		340C2F1022FC618900383CC8 /* APIServiceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F0F22FC618900383CC8 /* APIServiceInfo.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -142,6 +144,8 @@
 		340C2F0422FC4AA100383CC8 /* ProjectInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectInfo.swift; sourceTree = "<group>"; };
 		340C2F0622FC4AD200383CC8 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		340C2F0822FC4B0600383CC8 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		340C2F0D22FC617500383CC8 /* APIServiceInfoProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInfoProtocol.swift; sourceTree = "<group>"; };
+		340C2F0F22FC618900383CC8 /* APIServiceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceInfo.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -462,6 +466,31 @@
 			path = Environment;
 			sourceTree = "<group>";
 		};
+		340C2F0A22FC57A500383CC8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F0B22FC615F00383CC8 /* APIService */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		340C2F0B22FC615F00383CC8 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F0C22FC616700383CC8 /* Info */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		340C2F0C22FC616700383CC8 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F0F22FC618900383CC8 /* APIServiceInfo.swift */,
+				340C2F0D22FC617500383CC8 /* APIServiceInfoProtocol.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		34DABD4E22F891900080C9EF = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +518,7 @@
 			children = (
 				D273D07322F8FCDE0081E09F /* Application */,
 				340C2EBF22F9F19100383CC8 /* Common */,
+				340C2F0A22FC57A500383CC8 /* Core */,
 				D241AEC622FBC35D008BD230 /* Generated */,
 				340C2EAF22F9BC7D00383CC8 /* Shared */,
 				D273D07A22F900B40081E09F /* UI */,
@@ -1116,6 +1146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				340C2F1022FC618900383CC8 /* APIServiceInfo.swift in Sources */,
 				D241AEC122FBA8E2008BD230 /* ClosureResourceParser.swift in Sources */,
 				D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */,
 				D241AE9422FBA13B008BD230 /* JSONParameterEncoder.swift in Sources */,
@@ -1172,6 +1203,7 @@
 				D241AE7B22FB9886008BD230 /* JSONEncoderProtocol.swift in Sources */,
 				D241AEA822FBA530008BD230 /* URLRequest+Networking.swift in Sources */,
 				340C2ECD22FB01ED00383CC8 /* Router.swift in Sources */,
+				340C2F0E22FC617500383CC8 /* APIServiceInfoProtocol.swift in Sources */,
 				D241AE7622FA766E008BD230 /* ScreenProtocol.swift in Sources */,
 				340C2EEA22FB532B00383CC8 /* NetworkingError.swift in Sources */,
 				340C2EEE22FB55AC00383CC8 /* URLSessionProtocol.swift in Sources */,
