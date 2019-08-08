@@ -66,6 +66,7 @@
 		D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEBA22FBA829008BD230 /* APIServiceProtocol.swift */; };
 		D241AEBD22FBA860008BD230 /* DictionaryResourceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEBC22FBA860008BD230 /* DictionaryResourceParameters.swift */; };
 		D241AEBF22FBA89B008BD230 /* EncodableResourceParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEBE22FBA89B008BD230 /* EncodableResourceParameters.swift */; };
+		D241AEC122FBA8E2008BD230 /* ClosureResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -186,6 +187,7 @@
 		D241AEBA22FBA829008BD230 /* APIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceProtocol.swift; sourceTree = "<group>"; };
 		D241AEBC22FBA860008BD230 /* DictionaryResourceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResourceParameters.swift; sourceTree = "<group>"; };
 		D241AEBE22FBA89B008BD230 /* EncodableResourceParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableResourceParameters.swift; sourceTree = "<group>"; };
+		D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureResourceParser.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -673,6 +675,7 @@
 		D241AEAB22FBA5CF008BD230 /* Parser */ = {
 			isa = PBXGroup;
 			children = (
+				D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */,
 				D241AEAC22FBA5E7008BD230 /* ResourceParser.swift */,
 			);
 			path = Parser;
@@ -1062,6 +1065,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D241AEC122FBA8E2008BD230 /* ClosureResourceParser.swift in Sources */,
 				D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */,
 				D241AE9422FBA13B008BD230 /* JSONParameterEncoder.swift in Sources */,
 				D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */,
