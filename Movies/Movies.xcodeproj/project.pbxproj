@@ -45,6 +45,7 @@
 		340C2F1F22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */; };
 		340C2F2122FC8FEA00383CC8 /* UpcomingMoviesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */; };
 		340C2F2322FC908800383CC8 /* UpcomingMoviesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */; };
+		340C2F2922FC920800383CC8 /* ResponseModel.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F2822FC920800383CC8 /* ResponseModel.Configuration.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -158,6 +159,7 @@
 		340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesAPIServiceProtocol.swift; sourceTree = "<group>"; };
 		340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesResource.swift; sourceTree = "<group>"; };
 		340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesAPIService.swift; sourceTree = "<group>"; };
+		340C2F2822FC920800383CC8 /* ResponseModel.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.Configuration.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -516,6 +518,7 @@
 		340C2F1422FC8E8600383CC8 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				340C2F2722FC91F500383CC8 /* Configuration */,
 				340C2F1522FC8EC000383CC8 /* Movie */,
 				340C2F1122FC8E6A00383CC8 /* ResponseModel.swift */,
 			);
@@ -547,6 +550,14 @@
 				340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */,
 			);
 			path = UpcomingMovies;
+			sourceTree = "<group>";
+		};
+		340C2F2722FC91F500383CC8 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F2822FC920800383CC8 /* ResponseModel.Configuration.swift */,
+			);
+			path = Configuration;
 			sourceTree = "<group>";
 		};
 		34DABD4E22F891900080C9EF = {
@@ -1280,6 +1291,7 @@
 				D241AE9122FBA0D1008BD230 /* ParameterEncoder.swift in Sources */,
 				D241AE8122FB9DBA008BD230 /* URLFormComponent.swift in Sources */,
 				D241AE7322FA74B2008BD230 /* Coordinator.swift in Sources */,
+				340C2F2922FC920800383CC8 /* ResponseModel.Configuration.swift in Sources */,
 				D241AEC322FBA961008BD230 /* APIService.swift in Sources */,
 				D241AEAD22FBA5E7008BD230 /* ResourceParser.swift in Sources */,
 				34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */,
