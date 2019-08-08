@@ -544,19 +544,19 @@
 			isa = PBXGroup;
 			children = (
 				340C2F2E22FC991800383CC8 /* Configuration */,
-				340C2F1D22FC8F8A00383CC8 /* UpcomingMovies */,
+				340C2F3522FCA01100383CC8 /* Movies */,
 			);
 			path = Services;
 			sourceTree = "<group>";
 		};
-		340C2F1D22FC8F8A00383CC8 /* UpcomingMovies */ = {
+		340C2F1D22FC8F8A00383CC8 /* Upcoming */ = {
 			isa = PBXGroup;
 			children = (
 				340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */,
 				340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */,
 				340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */,
 			);
-			path = UpcomingMovies;
+			path = Upcoming;
 			sourceTree = "<group>";
 		};
 		340C2F2722FC91F500383CC8 /* Configuration */ = {
@@ -575,6 +575,14 @@
 				340C2F2F22FC993500383CC8 /* ConfigurationResource.swift */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		340C2F3522FCA01100383CC8 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F1D22FC8F8A00383CC8 /* Upcoming */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		34DABD4E22F891900080C9EF = {
