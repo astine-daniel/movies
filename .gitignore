@@ -1,3 +1,10 @@
+### Environment variables file
+.env-vars.sh
+env-vars.sh
+
+### Exclude Credential file
+**/*.generated.swift
+
 ### macOS ###
 # General
 .DS_Store
