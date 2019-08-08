@@ -4,16 +4,16 @@ Sample app to fetch content from [The Movie Database (TMDb)](https://www.themovi
 
 ## Requirements
 
-In order to the app works, is required an API key to access TMDB. There is a
-build phase script that insert it into the project but is necessary that an
-environment variable was set: **API_KEY**.
+In order for the app to work, it is required an API key to access TMDB. There is a
+build phase script that inserts it into the project but it is necessary to have
+an environment variable named **API_KEY**.
 
-This variable can be set on the CI or create a bash script. The build phase
-script expect for a bash script named **env-vars.sh**. That script will be
-executed in case of the variable was not set. **(That script must be at the same
+This variable can be set in the CI or through a bash script. The build phase
+script expects for a bash script named **env-vars.sh**. That script will be
+executed in case the variable was not set. **(That script must be at the same
 directory level of Movies.xcworkspace)**
 
-That bash script can be create manualy with a content like that, for example:
+That bash script can be created manually with a content as below for example:
 
 ```sh
 export API_KEY={api key}
@@ -21,7 +21,7 @@ export API_KEY={api key}
 
 (Change _{api key}_ for the correct api key)
 
-Or can be generated using another script called **create-env-vars.sh**.
+Or it can be generated using an other script called **create-env-vars.sh**.
 For example:
 
 ```sh
