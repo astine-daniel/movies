@@ -44,6 +44,7 @@
 		340C2F1B22FC8F2E00383CC8 /* ResponseModel.UpcomingMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F1A22FC8F2E00383CC8 /* ResponseModel.UpcomingMovies.swift */; };
 		340C2F1F22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */; };
 		340C2F2122FC8FEA00383CC8 /* UpcomingMoviesResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */; };
+		340C2F2322FC908800383CC8 /* UpcomingMoviesAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -156,6 +157,7 @@
 		340C2F1A22FC8F2E00383CC8 /* ResponseModel.UpcomingMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.UpcomingMovies.swift; sourceTree = "<group>"; };
 		340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesAPIServiceProtocol.swift; sourceTree = "<group>"; };
 		340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesResource.swift; sourceTree = "<group>"; };
+		340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesAPIService.swift; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 		340C2F1D22FC8F8A00383CC8 /* UpcomingMovies */ = {
 			isa = PBXGroup;
 			children = (
+				340C2F2222FC908800383CC8 /* UpcomingMoviesAPIService.swift */,
 				340C2F1E22FC8FA500383CC8 /* UpcomingMoviesAPIServiceProtocol.swift */,
 				340C2F2022FC8FEA00383CC8 /* UpcomingMoviesResource.swift */,
 			);
@@ -1253,6 +1256,7 @@
 				340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
 				340C2EFE22FB598D00383CC8 /* HTTPHeaders.swift in Sources */,
+				340C2F2322FC908800383CC8 /* UpcomingMoviesAPIService.swift in Sources */,
 				340C2EDC22FB046700383CC8 /* UIViewController+Presentable.swift in Sources */,
 				D241AE6E22FA7071008BD230 /* NavigationController.swift in Sources */,
 				D273D0A622F917EB0081E09F /* UpcomingMoviesListView.swift in Sources */,
