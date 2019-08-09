@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -101,9 +97,9 @@
                 <outlet property="_contentView" destination="hz1-e5-O3y" id="P7Y-xc-vdE"/>
                 <outlet property="_genresLabel" destination="d1H-va-4kr" id="5BG-H2-Yuy"/>
                 <outlet property="_movieInfoContentView" destination="gFL-aq-Qwo" id="nUu-Cl-Iuj"/>
-                <outlet property="_nameLabel" destination="wAp-dF-A26" id="Qje-kN-Pek"/>
                 <outlet property="_posterImageView" destination="Qdo-C8-Fok" id="ZZX-DX-A5d"/>
                 <outlet property="_releaseDateLabel" destination="g6M-fp-plK" id="lCL-in-LTy"/>
+                <outlet property="_titleLabel" destination="wAp-dF-A26" id="Qje-kN-Pek"/>
             </connections>
             <point key="canvasLocation" x="-230.43478260869566" y="-62.276785714285708"/>
         </collectionViewCell>

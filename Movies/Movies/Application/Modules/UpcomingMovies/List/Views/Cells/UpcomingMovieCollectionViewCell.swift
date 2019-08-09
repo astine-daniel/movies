@@ -1,6 +1,16 @@
 import UIKit
 
 final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        _backdropImageView.image = nil
+        _posterImageView.image = nil
+        _releaseDateLabel.text = nil
+        _titleLabel.text = nil
+        _genresLabel.text = nil
+    }
+
     // MARK: - IBOutlets
     @IBOutlet private var _contentView: UIView! {
         didSet {
@@ -10,7 +20,9 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
 
     @IBOutlet private var _backdropImageView: UIImageView! {
         didSet {
-            _backdropImageView.backgroundColor = .darkGray
+            _backdropImageView.backgroundColor = .clear
+            _backdropImageView.contentMode = .center
+            _backdropImageView.image = nil
         }
     }
 
@@ -22,27 +34,44 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
 
     @IBOutlet private var _posterImageView: UIImageView! {
         didSet {
-            _posterImageView.backgroundColor = .darkGray
+            _posterImageView.backgroundColor = .clear
+            _posterImageView.contentMode = .scaleAspectFill
+            _posterImageView.image = nil
         }
     }
 
     @IBOutlet private var _releaseDateLabel: UILabel! {
         didSet {
             _releaseDateLabel.font = .systemFont(ofSize: 12.0, weight: .bold)
+            _releaseDateLabel.text = nil
         }
     }
 
-    @IBOutlet private var _nameLabel: UILabel! {
+    @IBOutlet private var _titleLabel: UILabel! {
         didSet {
-            _nameLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
-            _nameLabel.textColor = .black
+            _titleLabel.font = .systemFont(ofSize: 20.0, weight: .bold)
+            _titleLabel.textColor = .black
+            _titleLabel.text = nil
         }
     }
 
     @IBOutlet private var _genresLabel: UILabel! {
         didSet {
             _genresLabel.font = .systemFont(ofSize: 12)
+            _genresLabel.text = nil
         }
+    }
+}
+
+// MARK: - Methods
+extension UpcomingMovieCollectionViewCell {
+    func setup(_ movie: Model.Movie) {
+        _titleLabel.text = movie.title
+        _releaseDateLabel.text = movie.releaseDate.monthDayYearFormat
+        _genresLabel.text = movie.genres.joined(separator: ", ")
+
+        _backdropImageView.load(url: movie.backdropUrl)
+        _posterImageView.load(url: movie.posterUrl)
     }
 }
 

@@ -18,9 +18,9 @@ extension ResponseModel.Movie: Decodable {
 
         let id: Int = try container.decode(Int.self, forKey: .id)
         let title: String = try container.decode(String.self, forKey: .title)
-        let posterPath: String = try container.decode(String.self, forKey: .posterPath)
+        let posterPath: String = (try? container.decode(String.self, forKey: .posterPath)).orDefault("")
         let genreIds: [Int] = try container.decode([Int].self, forKey: .genreIds)
-        let backdropPath: String = try container.decode(String.self, forKey: .backdropPath)
+        let backdropPath: String = (try? container.decode(String.self, forKey: .backdropPath)).orDefault("")
         let overview: String = try container.decode(String.self, forKey: .overview)
         let releaseDateString: String = try container.decode(String.self, forKey: .releaseDate)
 

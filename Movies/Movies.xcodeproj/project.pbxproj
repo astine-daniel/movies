@@ -99,6 +99,7 @@
 		D241AEDE22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEDD22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift */; };
 		D241AEE022FCFF23008BD230 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEDF22FCFF23008BD230 /* MoviesRepository.swift */; };
 		D241AEEB22FD0C3C008BD230 /* UIImageView+Kingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEEA22FD0C3C008BD230 /* UIImageView+Kingfisher.swift */; };
+		D241AEEE22FD1483008BD230 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEED22FD1483008BD230 /* Date+String.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -252,6 +253,7 @@
 		D241AEDD22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D241AEDF22FCFF23008BD230 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		D241AEEA22FD0C3C008BD230 /* UIImageView+Kingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Kingfisher.swift"; sourceTree = "<group>"; };
+		D241AEED22FD1483008BD230 /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 		340C2EB022F9BC8700383CC8 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D241AEEC22FD1473008BD230 /* Date */,
 				340C2EB122F9BC9000383CC8 /* Optional */,
 				D241AEE922FD0C27008BD230 /* UI */,
 			);
@@ -953,6 +956,14 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		D241AEEC22FD1473008BD230 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				D241AEED22FD1483008BD230 /* Date+String.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -1358,6 +1369,7 @@
 				D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				340C2F3022FC993500383CC8 /* ConfigurationResource.swift in Sources */,
+				D241AEEE22FD1483008BD230 /* Date+String.swift in Sources */,
 				D241AED222FCF56A008BD230 /* ConfigurationRepository.swift in Sources */,
 				D241AE7F22FB9D31008BD230 /* URLFormEncoding.swift in Sources */,
 				D241AED722FCFA61008BD230 /* GenresRepositoryProtocol.swift in Sources */,

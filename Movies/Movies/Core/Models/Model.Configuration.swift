@@ -31,6 +31,6 @@ extension Model.Configuration {
 // MARK: - Private extension
 private extension Model.Configuration {
     func imageUrl(path: String, size: String) -> URL? {
-        return imageBaseUrl?.appendingPathComponent("\(size)/\(path)")
+        return imageBaseUrl?.appendingPathComponent("\(size)\(path)")
     }
 }

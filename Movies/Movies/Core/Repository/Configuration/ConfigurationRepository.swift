@@ -37,7 +37,7 @@ extension ConfigurationRepository: ConfigurationRepositoryProtocol {
 // MARK: - Private extension
 private extension ConfigurationRepository {
     func transform(_ response: ResponseModel.Configuration) -> Model.Configuration {
-        let baseUrl = URL(string: response.images.baseUrl)
+        let baseUrl = URL(string: response.images.secureBaseUrl)
         let backdropSize = response.images.backdropSizes
             .first(where: { $0.contains("780") })
             .orDefault("original")

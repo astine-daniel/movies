@@ -8,6 +8,9 @@ final class UpcomingMoviesListViewController: UIViewController {
     // swiftlint:disable:next weak_delegate
     private let _layoutDelegate = UpcomingMoviesListLayoutDelegate()
     private let _view: View
+    private weak var _activityIndicatorView: UIActivityIndicatorView?
+
+    private var _movies: [Model.Movie] = []
 
     var didSelectUpcomingMovie = Delegated<Void, Void>()
 
@@ -33,18 +36,47 @@ final class UpcomingMoviesListViewController: UIViewController {
 
         setupView()
     }
+
+    // MARK: - Methods
+    func showLoading() {
+        let activityIndicatorView = UIActivityIndicatorView(style: .gray)
+        _view.collectionView.backgroundView = activityIndicatorView
+
+        activityIndicatorView.startAnimating()
+        _activityIndicatorView = activityIndicatorView
+    }
+
+    func hideLoading() {
+        _activityIndicatorView?.stopAnimating()
+        _view.collectionView.backgroundView = nil
+    }
+
+    func show(movies: [Model.Movie]) {
+        let insertIndexPaths = (_movies.count ..< (_movies.count + movies.count)).map {
+            IndexPath(item: $0, section: 0)
+        }
+
+        _movies.append(contentsOf: movies)
+
+        _view.collectionView.performBatchUpdates({
+            _view.collectionView.insertItems(at: insertIndexPaths)
+        })
+    }
 }
 
 // MARK: - UICollectionViewDataSource extension
 extension UpcomingMoviesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return _movies.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(for: indexPath) as UpcomingMovieCollectionViewCell
+        let cell: UpcomingMovieCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setup(_movies[indexPath.item])
+
+        return cell
     }
 }
 
