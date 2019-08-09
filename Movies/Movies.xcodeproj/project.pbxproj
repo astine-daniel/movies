@@ -92,6 +92,7 @@
 		D241AEC122FBA8E2008BD230 /* ClosureResourceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */; };
 		D241AEC322FBA961008BD230 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEC222FBA961008BD230 /* APIService.swift */; };
 		D241AECC22FBCFA9008BD230 /* Credentials.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AECB22FBCFA9008BD230 /* Credentials.generated.swift */; };
+		D241AED222FCF56A008BD230 /* ConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AED122FCF56A008BD230 /* ConfigurationRepository.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -238,6 +239,7 @@
 		D241AEC022FBA8E2008BD230 /* ClosureResourceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureResourceParser.swift; sourceTree = "<group>"; };
 		D241AEC222FBA961008BD230 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		D241AECB22FBCFA9008BD230 /* Credentials.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.generated.swift; sourceTree = "<group>"; };
+		D241AED122FCF56A008BD230 /* ConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRepository.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -636,6 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				340C2F4322FCA4EB00383CC8 /* ConfigurationRepositoryProtocol.swift */,
+				D241AED122FCF56A008BD230 /* ConfigurationRepository.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1312,6 +1315,7 @@
 				D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				340C2F3022FC993500383CC8 /* ConfigurationResource.swift in Sources */,
+				D241AED222FCF56A008BD230 /* ConfigurationRepository.swift in Sources */,
 				D241AE7F22FB9D31008BD230 /* URLFormEncoding.swift in Sources */,
 				340C2EF722FB578D00383CC8 /* HTTPMethod.swift in Sources */,
 				D241AE7122FA7483008BD230 /* CoordinatorProtocol.swift in Sources */,
