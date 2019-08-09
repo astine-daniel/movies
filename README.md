@@ -72,6 +72,9 @@ Dependency manager for Swift and Objective-C Cocoa projects.
 bundle install
 ```
 
+(Normally the **Pods** folder is not tracked on git, but for a easy fast build
+it is temporally tracked.)
+
 ## App dependencies
 
 The app use some third party dependencies and some development dependencies.

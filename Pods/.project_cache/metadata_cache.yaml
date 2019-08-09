@@ -1,0 +1,28 @@
+Kingfisher:
+  LABEL: Kingfisher
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Kingfisher.xcodeproj"
+  UUID: 05BB3BFEAA03766641420DCD88978468
+Nimble:
+  LABEL: Nimble
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Nimble.xcodeproj"
+  UUID: 7BE48F194BFF9CA61B5D3D3642E1E19C
+Pods-default-Movies:
+  LABEL: Pods-default-Movies
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Pods.xcodeproj"
+  UUID: DD847A53A6F4967F0F90F7BB199CD865
+Pods-MoviesTests:
+  LABEL: Pods-MoviesTests
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Pods.xcodeproj"
+  UUID: 6F8E772C85C7144D592BABBCEB04F76B
+Pods-MoviesUITests:
+  LABEL: Pods-MoviesUITests
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Pods.xcodeproj"
+  UUID: 1B6C512F791A44BCF3F37DC2264B666F
+Sourcery:
+  LABEL: Sourcery
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/Sourcery.xcodeproj"
+  UUID: D2974FB9E48C58D0AD044D5325F700EC
+SwiftLint:
+  LABEL: SwiftLint
+  PROJECT_PATH: "/Users/astine/Developer/Projects/Astine/movies/Pods/SwiftLint.xcodeproj"
+  UUID: DF739ADE66FA54F9BBFF97A8CB609E34
