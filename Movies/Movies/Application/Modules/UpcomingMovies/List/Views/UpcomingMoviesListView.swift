@@ -3,6 +3,7 @@ import UIKit
 final class UpcomingMoviesListView: UIView {
     // MARK: - Outlets
     @IBOutlet private var _contentView: UIView!
+    @IBOutlet private var _seachContentView: UIView!
     @IBOutlet private var _collectionView: UICollectionView!
 
     // MARK: - Initialization
@@ -26,7 +27,20 @@ final class UpcomingMoviesListView: UIView {
 
 // MARK: - UpcomingMoviesListViewProtocol extension
 extension UpcomingMoviesListView: UpcomingMoviesListViewProtocol {
+    var contentView: UIView { return _contentView }
     var collectionView: UICollectionView { return _collectionView }
+
+    func add(searchBar: UISearchBar) {
+        _seachContentView.addSubview(searchBar)
+        searchBar.layout {
+            $0.top == _seachContentView.topAnchor
+            $0.leading == _seachContentView.leadingAnchor
+            $0.trailing == _seachContentView.trailingAnchor
+            $0.bottom == _seachContentView.bottomAnchor
+        }
+
+        _seachContentView.isHidden = false
+    }
 }
 
 // MARK: - NibOwnerLoadable extension
