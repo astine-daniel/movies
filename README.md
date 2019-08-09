@@ -2,6 +2,11 @@
 
 Sample app to fetch content from [The Movie Database (TMDb)](https://www.themoviedb.org/documentation/api).
 
+## Screenshots
+
+![Home](./screenshots/screenshot-01.png)
+![Home](./screenshots/screenshot-02.png)
+
 ## Requirements
 
 In order for the app to work, it is required an API key to access TMDB. There is a
