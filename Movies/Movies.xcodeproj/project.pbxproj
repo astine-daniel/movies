@@ -57,6 +57,8 @@
 		340C2F4422FCA4EB00383CC8 /* ConfigurationRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F4322FCA4EB00383CC8 /* ConfigurationRepositoryProtocol.swift */; };
 		340C2F4822FCA55500383CC8 /* Model.Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F4722FCA55500383CC8 /* Model.Configuration.swift */; };
 		340C2F4A22FCAC0E00383CC8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F4922FCAC0E00383CC8 /* Model.swift */; };
+		340C2F5C22FD901700383CC8 /* LoadingCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340C2F5B22FD901700383CC8 /* LoadingCardCollectionViewCell.swift */; };
+		340C2F5F22FD907900383CC8 /* LoadingCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 340C2F5E22FD907900383CC8 /* LoadingCardCollectionViewCell.xib */; };
 		3497B031E0C2D8DF5E835271 /* libPods-MoviesTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32068EC4C98FF72277902521 /* libPods-MoviesTests.a */; };
 		34DABD5B22F891900080C9EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DABD5A22F891900080C9EF /* AppDelegate.swift */; };
 		34DABD6222F891920080C9EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DABD6122F891920080C9EF /* Assets.xcassets */; };
@@ -191,6 +193,8 @@
 		340C2F4322FCA4EB00383CC8 /* ConfigurationRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRepositoryProtocol.swift; sourceTree = "<group>"; };
 		340C2F4722FCA55500383CC8 /* Model.Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Configuration.swift; sourceTree = "<group>"; };
 		340C2F4922FCAC0E00383CC8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		340C2F5B22FD901700383CC8 /* LoadingCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		340C2F5E22FD907900383CC8 /* LoadingCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		34DABD5722F891900080C9EF /* Movies-Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Movies-Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		34DABD5A22F891900080C9EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34DABD6122F891920080C9EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -327,6 +331,7 @@
 		340C2EAC22F9B70500383CC8 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				340C2F5D22FD906600383CC8 /* LoadingCard */,
 				340C2EAD22F9B7B400383CC8 /* CardCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -672,6 +677,15 @@
 				D241AEDA22FCFDDE008BD230 /* Model.Movie.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		340C2F5D22FD906600383CC8 /* LoadingCard */ = {
+			isa = PBXGroup;
+			children = (
+				340C2F5B22FD901700383CC8 /* LoadingCardCollectionViewCell.swift */,
+				340C2F5E22FD907900383CC8 /* LoadingCardCollectionViewCell.xib */,
+			);
+			path = LoadingCard;
 			sourceTree = "<group>";
 		};
 		34DABD4E22F891900080C9EF = {
@@ -1210,6 +1224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D273D0A822F917F70081E09F /* UpcomingMoviesListView.xib in Resources */,
+				340C2F5F22FD907900383CC8 /* LoadingCardCollectionViewCell.xib in Resources */,
 				D273D0B322F9229F0081E09F /* UpcomingMovieCollectionViewCell.xib in Resources */,
 				34DABD6522F891920080C9EF /* LaunchScreen.storyboard in Resources */,
 				34DABD6222F891920080C9EF /* Assets.xcassets in Resources */,
@@ -1415,6 +1430,7 @@
 				340C2F3D22FCA2DC00383CC8 /* GenresResource.swift in Sources */,
 				340C2EC822FB014900383CC8 /* RouterProtocol.swift in Sources */,
 				D241AEBF22FBA89B008BD230 /* EncodableResourceParameters.swift in Sources */,
+				340C2F5C22FD901700383CC8 /* LoadingCardCollectionViewCell.swift in Sources */,
 				D241AE8822FB9F7D008BD230 /* Endpoint.swift in Sources */,
 				D241AEEB22FD0C3C008BD230 /* UIImageView+Kingfisher.swift in Sources */,
 				D241AE9722FBA345008BD230 /* URLEncodedFormEncoderProtocol.swift in Sources */,

@@ -11,8 +11,10 @@ final class UpcomingMoviesListViewController: UIViewController {
     private weak var _activityIndicatorView: UIActivityIndicatorView?
 
     private var _movies: [Model.Movie] = []
+    private var isRequestingMoreItems: Bool = false
 
     var didSelectUpcomingMovie = Delegated<Model.Movie, Void>()
+    var didRequestMoreItems = Delegated<Void, Void>()
 
     // MARK: - Initializers
     required init(_ view: View) {
@@ -68,15 +70,20 @@ final class UpcomingMoviesListViewController: UIViewController {
 extension UpcomingMoviesListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
+        if isRequestingMoreItems {
+            return _movies.count + 1
+        }
+
         return _movies.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UpcomingMovieCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setup(_movies[indexPath.item])
+        guard indexPath.item < _movies.count else {
+            return loadingCell(for: indexPath, collectionView)
+        }
 
-        return cell
+        return upcomingMovieCell(for: indexPath, collectionView)
     }
 }
 
@@ -87,7 +94,38 @@ private extension UpcomingMoviesListViewController {
         _view.collectionView.delegate = _layoutDelegate
 
         _view.collectionView.register(cellType: UpcomingMovieCollectionViewCell.self)
+        _view.collectionView.register(cellType: LoadingCardCollectionViewCell.self)
+
         _layoutDelegate.didSelectItem.delegate { self.didSelectItem(at: $0) }
+        _layoutDelegate.didRequestMoreItems.delegate { _ in
+            self.requestMoreItems()
+        }
+    }
+
+    func requestMoreItems() {
+        guard isRequestingMoreItems == false && _movies.isEmpty == false else { return }
+        isRequestingMoreItems = true
+
+        let insertIndexPath = IndexPath(item: _movies.count, section: 0)
+        _view.collectionView.performBatchUpdates({
+            _view.collectionView.insertItems(at: [insertIndexPath])
+        })
+
+        didRequestMoreItems.call()
+    }
+
+    func upcomingMovieCell(for indexPath: IndexPath, _ collectionView: UICollectionView) -> UpcomingMovieCollectionViewCell {
+        let cell: UpcomingMovieCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setup(_movies[indexPath.item])
+
+        return cell
+    }
+
+    func loadingCell(for indexPath: IndexPath, _ collectionView: UICollectionView) -> LoadingCardCollectionViewCell {
+        let cell: LoadingCardCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.startLoading()
+
+        return cell
     }
 
     func didSelectItem(at indexPath: IndexPath) {

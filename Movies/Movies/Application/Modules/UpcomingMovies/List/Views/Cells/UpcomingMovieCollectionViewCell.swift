@@ -4,8 +4,12 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
+        _backdropImageView.backgroundColor = .white
         _backdropImageView.image = nil
+
+        _posterImageView.backgroundColor = .white
         _posterImageView.image = nil
+
         _releaseDateLabel.text = nil
         _titleLabel.text = nil
         _genresLabel.text = nil
@@ -20,8 +24,8 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
 
     @IBOutlet private var _backdropImageView: UIImageView! {
         didSet {
-            _backdropImageView.backgroundColor = .clear
-            _backdropImageView.contentMode = .center
+            _backdropImageView.backgroundColor = .white
+            _backdropImageView.contentMode = .scaleAspectFill
             _backdropImageView.image = nil
         }
     }
@@ -34,7 +38,7 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
 
     @IBOutlet private var _posterImageView: UIImageView! {
         didSet {
-            _posterImageView.backgroundColor = .clear
+            _posterImageView.backgroundColor = .white
             _posterImageView.contentMode = .scaleAspectFill
             _posterImageView.image = nil
         }

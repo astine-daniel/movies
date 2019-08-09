@@ -7,6 +7,7 @@ final class UpcomingMoviesListLayoutDelegate: NSObject {
     private let preferredItemSize = CGSize(width: 324.0, height: 460.0)
 
     var didSelectItem = Delegated<IndexPath, Void>()
+    var didRequestMoreItems = Delegated<Void, Void>()
 
     // MARK: - Methods
     func itemsPerRow(for size: CGSize) -> Int {
@@ -48,6 +49,15 @@ extension UpcomingMoviesListLayoutDelegate: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         didSelectItem.call(indexPath)
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset: CGFloat = 200.0
+        let bottomEdge = scrollView.contentOffset.y + scrollView.frame.height
+
+        if bottomEdge + offset >= scrollView.contentSize.height {
+            didRequestMoreItems.call()
+        }
     }
 }
 
