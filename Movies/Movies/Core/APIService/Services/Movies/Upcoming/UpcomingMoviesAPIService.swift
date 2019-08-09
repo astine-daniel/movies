@@ -11,7 +11,7 @@ struct UpcomingMoviesAPIService {
 // MARK: - UpcomingMoviesAPIServiceProtocol extension
 extension UpcomingMoviesAPIService: UpcomingMoviesAPIServiceProtocol {
     func upcomingMovies(at page: Int, _ completion: @escaping Completion<ResponseModel.UpcomingMovies>) {
-        apiService.request(resource: .upcoming(), completion)
+        apiService.request(resource: .upcoming(page: page), completion)
     }
 }
 

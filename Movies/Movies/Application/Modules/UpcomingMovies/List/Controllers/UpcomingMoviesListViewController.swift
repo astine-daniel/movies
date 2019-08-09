@@ -58,9 +58,16 @@ final class UpcomingMoviesListViewController: UIViewController {
             IndexPath(item: $0, section: 0)
         }
 
+        var deleteIndexPaths: [IndexPath] = []
+        if isRequestingMoreItems {
+            isRequestingMoreItems = false
+            deleteIndexPaths.append(IndexPath(item: _movies.count, section: 0))
+        }
+
         _movies.append(contentsOf: movies)
 
         _view.collectionView.performBatchUpdates({
+            _view.collectionView.deleteItems(at: deleteIndexPaths)
             _view.collectionView.insertItems(at: insertIndexPaths)
         })
     }

@@ -33,6 +33,10 @@ private extension UpcomingMoviesCoordinator {
             self.showUpcomingMovieDetailScreen(for: movie)
         }
 
+        presentable.didRequestMoreItems.delegate { _ in
+            self.fetchMoreUpcomingMovies(presentable)
+        }
+
         presentable.title = "Movies"
 
         router.show(presentable, animated: true, completion: nil)
@@ -75,6 +79,19 @@ private extension UpcomingMoviesCoordinator {
             case let .failure(error):
                 self.showError(error) {
                     self.fetchUpcomingMovies(presentable)
+                }
+            }
+        }
+    }
+
+    func fetchMoreUpcomingMovies(_ presentable: UpcomingMoviesListViewController) {
+        repository.fetchMoreUpcomingMovies { result in
+            switch result {
+            case let .success(movies):
+                presentable.show(movies: movies)
+            case let .failure(error):
+                self.showError(error) {
+                    self.fetchMoreUpcomingMovies(presentable)
                 }
             }
         }

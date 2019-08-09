@@ -31,6 +31,8 @@ extension Model.Configuration {
 // MARK: - Private extension
 private extension Model.Configuration {
     func imageUrl(path: String, size: String) -> URL? {
+        if path.isEmpty || size.isEmpty { return nil }
+
         return imageBaseUrl?.appendingPathComponent("\(size)\(path)")
     }
 }
