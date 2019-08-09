@@ -82,6 +82,13 @@ To install:
 bundle exec pod install
 ```
 
+### [Kingfisher](https://github.com/onevcat/Kingfisher)
+
+Kingfisher is a powerful, pure-Swift library for downloading and caching images
+from the web.
+
+It is used to cache the poster and backdrop images from the movies.
+
 ### [SwiftLint](https://github.com/realm/SwiftLint)
 
 A tool to enforce Swift style and conventions.

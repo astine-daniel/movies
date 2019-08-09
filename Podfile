@@ -18,6 +18,9 @@ end
 abstract_target 'default' do
   supports_swift_versions '>= 5.0'
 
+  # UI
+  pod 'Kingfisher'
+
   # Lint
   pod 'SwiftLint'
 
