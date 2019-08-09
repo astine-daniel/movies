@@ -24,12 +24,61 @@ final class UpcomingMovieDetailView: UIView {
     @IBOutlet private var _scrollView: UIScrollView!
     @IBOutlet private var _scrollContentView: UIView!
 
-    @IBOutlet private var _posterImageView: UIImageView!
-    @IBOutlet private var _titleLabel: UILabel!
-    @IBOutlet private var _releaseDateLabel: UILabel!
-    @IBOutlet private var _genresLabel: UILabel!
-    @IBOutlet private var _overviewLabel: UILabel!
-    @IBOutlet private var _overviewContentLabel: UILabel!
+    @IBOutlet private var _posterImageView: UIImageView! {
+        didSet {
+            _posterImageView.backgroundColor = .white
+            _posterImageView.image = nil
+        }
+    }
+
+    @IBOutlet private var _titleLabel: UILabel! {
+        didSet {
+            _titleLabel.text = nil
+            _titleLabel.font = .systemFont(ofSize: 14.0, weight: .bold)
+            _titleLabel.numberOfLines = 0
+        }
+    }
+
+    @IBOutlet private var _releaseDateLabel: UILabel! {
+        didSet {
+            _releaseDateLabel.text = nil
+            _releaseDateLabel.font = .systemFont(ofSize: 12.0)
+            _releaseDateLabel.numberOfLines = 1
+        }
+    }
+
+    @IBOutlet private var _genresLabel: UILabel! {
+        didSet {
+            _genresLabel.text = nil
+            _genresLabel.font = .systemFont(ofSize: 12.0, weight: .light)
+            _genresLabel.numberOfLines = 0
+        }
+    }
+
+    @IBOutlet private var _overviewLabel: UILabel! {
+        didSet {
+            _overviewLabel.text = "Overview"
+            _overviewLabel.font = .systemFont(ofSize: 22.0, weight: .bold)
+            _overviewLabel.numberOfLines = 1
+        }
+    }
+
+    @IBOutlet private var _overviewContentLabel: UILabel! {
+        didSet {
+            _overviewContentLabel.text = nil
+            _overviewContentLabel.font = .systemFont(ofSize: 15.0)
+            _overviewContentLabel.numberOfLines = 0
+        }
+    }
+}
+
+// MARK: - UpcomingMovieDetailViewProtocol extension
+extension UpcomingMovieDetailView: UpcomingMovieDetailViewProtocol {
+    var posterImageView: UIImageView { return _posterImageView }
+    var titleLabel: UILabel { return _titleLabel }
+    var releaseDateLabel: UILabel { return _releaseDateLabel }
+    var genresLabel: UILabel { return _genresLabel }
+    var overviewLabel: UILabel { return _overviewContentLabel }
 }
 
 // MARK: - NibOwnerLoadable extension

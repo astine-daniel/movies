@@ -12,7 +12,7 @@ final class UpcomingMoviesListViewController: UIViewController {
 
     private var _movies: [Model.Movie] = []
 
-    var didSelectUpcomingMovie = Delegated<Void, Void>()
+    var didSelectUpcomingMovie = Delegated<Model.Movie, Void>()
 
     // MARK: - Initializers
     required init(_ view: View) {
@@ -91,6 +91,6 @@ private extension UpcomingMoviesListViewController {
     }
 
     func didSelectItem(at indexPath: IndexPath) {
-        didSelectUpcomingMovie.call()
+        didSelectUpcomingMovie.call(_movies[indexPath.item])
     }
 }

@@ -29,8 +29,8 @@ private extension UpcomingMoviesCoordinator {
     func showUpcomingMoviesListScreen() {
         let view = UpcomingMoviesListView()
         let presentable = UpcomingMoviesListViewController(view)
-        presentable.didSelectUpcomingMovie.delegate { _ in
-            self.showUpcomingMovieDetailScreen()
+        presentable.didSelectUpcomingMovie.delegate { movie in
+            self.showUpcomingMovieDetailScreen(for: movie)
         }
 
         presentable.title = "Movies"
@@ -40,11 +40,14 @@ private extension UpcomingMoviesCoordinator {
         fetchUpcomingMovies(presentable)
     }
 
-    func showUpcomingMovieDetailScreen() {
-        let presentable = UpcomingMovieDetailViewController()
-        presentable.title = "Detail"
+    func showUpcomingMovieDetailScreen(for movie: Model.Movie) {
+        let view = UpcomingMovieDetailView()
+        let presentable = UpcomingMovieDetailViewController(view)
+        presentable.title = movie.title
 
         router.show(presentable, animated: true, completion: nil)
+
+        presentable.setup(movie)
     }
 
     func showError(_ error: Error, _ tryAgainAction: (() -> Void)?) {
