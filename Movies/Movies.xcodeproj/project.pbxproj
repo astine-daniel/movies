@@ -95,6 +95,9 @@
 		D241AED222FCF56A008BD230 /* ConfigurationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AED122FCF56A008BD230 /* ConfigurationRepository.swift */; };
 		D241AED722FCFA61008BD230 /* GenresRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AED622FCFA61008BD230 /* GenresRepositoryProtocol.swift */; };
 		D241AED922FCFAFF008BD230 /* GenresRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AED822FCFAFF008BD230 /* GenresRepository.swift */; };
+		D241AEDB22FCFDDE008BD230 /* Model.Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEDA22FCFDDE008BD230 /* Model.Movie.swift */; };
+		D241AEDE22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEDD22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift */; };
+		D241AEE022FCFF23008BD230 /* MoviesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241AEDF22FCFF23008BD230 /* MoviesRepository.swift */; };
 		D273D07922F8FD540081E09F /* UpcomingMoviesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */; };
 		D273D07F22F901060081E09F /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D07E22F901060081E09F /* Reusable.swift */; };
 		D273D08322F901480081E09F /* ReusableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273D08222F901480081E09F /* ReusableTests.swift */; };
@@ -244,6 +247,9 @@
 		D241AED122FCF56A008BD230 /* ConfigurationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationRepository.swift; sourceTree = "<group>"; };
 		D241AED622FCFA61008BD230 /* GenresRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresRepositoryProtocol.swift; sourceTree = "<group>"; };
 		D241AED822FCFAFF008BD230 /* GenresRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresRepository.swift; sourceTree = "<group>"; };
+		D241AEDA22FCFDDE008BD230 /* Model.Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.Movie.swift; sourceTree = "<group>"; };
+		D241AEDD22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepositoryProtocol.swift; sourceTree = "<group>"; };
+		D241AEDF22FCFF23008BD230 /* MoviesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRepository.swift; sourceTree = "<group>"; };
 		D273D07822F8FD540081E09F /* UpcomingMoviesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMoviesListViewController.swift; sourceTree = "<group>"; };
 		D273D07E22F901060081E09F /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		D273D08222F901480081E09F /* ReusableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTests.swift; sourceTree = "<group>"; };
@@ -635,6 +641,7 @@
 			children = (
 				340C2F4522FCA53D00383CC8 /* Configuration */,
 				D241AED522FCFA46008BD230 /* Genres */,
+				D241AEDC22FCFE54008BD230 /* Movies */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -651,8 +658,9 @@
 		340C2F4622FCA54800383CC8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				340C2F4722FCA55500383CC8 /* Model.Configuration.swift */,
 				340C2F4922FCAC0E00383CC8 /* Model.swift */,
+				340C2F4722FCA55500383CC8 /* Model.Configuration.swift */,
+				D241AEDA22FCFDDE008BD230 /* Model.Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -923,6 +931,15 @@
 				D241AED622FCFA61008BD230 /* GenresRepositoryProtocol.swift */,
 			);
 			path = Genres;
+			sourceTree = "<group>";
+		};
+		D241AEDC22FCFE54008BD230 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				D241AEDF22FCFF23008BD230 /* MoviesRepository.swift */,
+				D241AEDD22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift */,
+			);
+			path = Movies;
 			sourceTree = "<group>";
 		};
 		D273D07322F8FCDE0081E09F /* Application */ = {
@@ -1326,6 +1343,7 @@
 				D241AE8B22FBA008008BD230 /* ResourceParameters.swift in Sources */,
 				D241AE9422FBA13B008BD230 /* JSONParameterEncoder.swift in Sources */,
 				D273D0AC22F920360081E09F /* UICollectionView+Reusable.swift in Sources */,
+				D241AEDB22FCFDDE008BD230 /* Model.Movie.swift in Sources */,
 				D241AEBB22FBA829008BD230 /* APIServiceProtocol.swift in Sources */,
 				340C2EB322F9BCA300383CC8 /* Optional+Default.swift in Sources */,
 				340C2F3022FC993500383CC8 /* ConfigurationResource.swift in Sources */,
@@ -1378,6 +1396,7 @@
 				D241AE9A22FBA38E008BD230 /* URLEncodedFormSerializer.swift in Sources */,
 				340C2EE322FB0A1800383CC8 /* ApplicationCoordinator.swift in Sources */,
 				340C2EDA22FB044400383CC8 /* ScreenProtocol+UIKit.swift in Sources */,
+				D241AEE022FCFF23008BD230 /* MoviesRepository.swift in Sources */,
 				340C2ED222FB023F00383CC8 /* NavigationRouterBackAnimation.swift in Sources */,
 				D273D0A322F9175E0081E09F /* UIView+NibOwnerLoadable.swift in Sources */,
 				340C2EFE22FB598D00383CC8 /* HTTPHeaders.swift in Sources */,
@@ -1390,6 +1409,7 @@
 				D273D09C22F914150081E09F /* LayoutProxy.swift in Sources */,
 				D241AE7B22FB9886008BD230 /* JSONEncoderProtocol.swift in Sources */,
 				D241AEA822FBA530008BD230 /* URLRequest+Networking.swift in Sources */,
+				D241AEDE22FCFE6E008BD230 /* MoviesRepositoryProtocol.swift in Sources */,
 				340C2F4822FCA55500383CC8 /* Model.Configuration.swift in Sources */,
 				340C2ECD22FB01ED00383CC8 /* Router.swift in Sources */,
 				340C2F0E22FC617500383CC8 /* APIServiceInfoProtocol.swift in Sources */,
