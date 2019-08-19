@@ -1,5 +1,5 @@
 PODS:
-  - Kingfisher (5.7.0)
+  - Kingfisher (5.7.1)
   - Nimble (8.0.2)
   - Sourcery (0.16.2)
   - SwiftLint (0.34.0)
@@ -18,7 +18,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Kingfisher: c7d211b54f1f30d8060aadab177d52b4349c825b
+  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
   Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c
   SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
