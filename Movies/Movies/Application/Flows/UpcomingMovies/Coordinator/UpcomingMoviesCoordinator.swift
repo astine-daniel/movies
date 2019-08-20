@@ -29,11 +29,11 @@ private extension UpcomingMoviesCoordinator {
     func showUpcomingMoviesListScreen() {
         let view = UpcomingMoviesListView()
         let presentable = UpcomingMoviesListViewController(view)
-        presentable.didSelectUpcomingMovie.delegate { movie in
+        presentable.didSelectUpcomingMovie.delegate(to: self) { (self, movie) in
             self.showUpcomingMovieDetailScreen(for: movie)
         }
 
-        presentable.didRequestMoreItems.delegate { _ in
+        presentable.didRequestMoreItems.delegate(to: self) { (self, _) in
             self.fetchMoreUpcomingMovies(presentable)
         }
 

@@ -130,8 +130,8 @@ private extension UpcomingMoviesListViewController {
         _view.collectionView.register(cellType: UpcomingMovieCollectionViewCell.self)
         _view.collectionView.register(cellType: LoadingCardCollectionViewCell.self)
 
-        _layoutDelegate.didSelectItem.delegate { self.didSelectItem(at: $0) }
-        _layoutDelegate.didRequestMoreItems.delegate { _ in
+        _layoutDelegate.didSelectItem.delegate(to: self) { (self, indexPath) in self.didSelectItem(at: indexPath) }
+        _layoutDelegate.didRequestMoreItems.delegate(to: self) { (self, _) in
             self.requestMoreItems()
         }
 

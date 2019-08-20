@@ -1,13 +1,19 @@
 struct Delegated<Input, Output> {
     private var _callback: ((Input) -> Output?)?
 
-    @discardableResult
-    mutating func delegate(_ callback: @escaping (Input) -> Output) -> Delegated<Input, Output> {
+    mutating func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target, Input) -> Output) {
+        _callback = { [weak target] input in
+            guard let target = target else { return nil }
+            return callback(target, input)
+        }
+    }
+
+    mutating func delegate(_ callback: @escaping (Input) -> Output) {
         _callback = { input in
             return callback(input)
         }
-
-        return self
     }
 
     func call(_ input: Input) -> Output? {
@@ -30,6 +36,16 @@ extension Delegated {
 }
 
 extension Delegated where Input == Void {
+    mutating func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target) -> Output) {
+        delegate(to: target, with: { target, _ in callback(target) })
+    }
+
+    mutating func delegate(_ callback: @escaping () -> Output) {
+        delegate { _ in callback() }
+    }
+
     func call() -> Output? {
         return self.call(())
     }
