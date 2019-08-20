@@ -47,6 +47,12 @@ final class UpcomingMoviesListViewController: UIViewController {
         definesPresentationContext = true
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        _view.collectionView.collectionViewLayout.invalidateLayout()
+    }
+
     // MARK: - Methods
     func showLoading() {
         let activityIndicatorView = UIActivityIndicatorView(style: .gray)
