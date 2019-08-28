@@ -26,10 +26,6 @@ struct Delegated<Input, Output> {
 }
 
 extension Delegated {
-    mutating func manuallyDelegate(with callback: @escaping (Input) -> Output) {
-        _callback = callback
-    }
-
     mutating func removeDelegate() {
         _callback = nil
     }

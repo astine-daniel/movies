@@ -9,14 +9,14 @@ final class DelegatedTests: XCTestCase {
         let deinitExpectation = XCTestExpectation(description: "Deinit expectation")
         var wasDeallocated = false
 
-        var tester: Tester? = Tester()
+        var tester: InputTester? = InputTester<URL>()
         tester?.onDeinit = {
             wasDeallocated = true
             deinitExpectation.fulfill()
         }
-        tester!.log()
+        tester!.log(URL(string: "https://test.com")!)
 
-        expect(tester!.logger.stringFromURL.isDelegateSet) == true
+        expect(tester!.logger.outputFromInput.isDelegateSet) == true
 
         tester = nil
         wait(for: [deinitExpectation], timeout: 10.0)
@@ -26,24 +26,24 @@ final class DelegatedTests: XCTestCase {
 }
 
 private extension DelegatedTests {
-    final class Logger {
-        var stringFromURL = Delegated<URL, String>()
+    final class Logger<Input, Output> {
+        var outputFromInput = Delegated<Input, Output>()
 
-        func log(url: URL) {
-            guard let url = stringFromURL.call(url) else { return }
-            print("Looger: \(url)")
+        func log(_ input: Input) {
+            guard let output = outputFromInput.call(input) else { return }
+            print("Looger: \(output)")
         }
     }
 
-    final class Tester {
-        let logger: Logger
+    final class InputTester<Input> {
+        let logger: Logger<Input, String>
 
         var onDeinit: (() -> Void)?
 
         init() {
             logger = Logger()
-            logger.stringFromURL.delegate(to: self) { (self, url) in
-                return self.string(from: url)
+            logger.outputFromInput.delegate(to: self) { (self, input) in
+                return self.convert(input: input)
             }
         }
 
@@ -51,12 +51,14 @@ private extension DelegatedTests {
             onDeinit?()
         }
 
-        func log() {
-            self.logger.log(url: URL(string: "https://www.delegated.com")!)
+        func log(_ value: Input) {
+            self.logger.log(value)
         }
+    }
+}
 
-        func string(from url: URL) -> String {
-            return String(describing: url)
-        }
+private extension DelegatedTests.InputTester {
+    func convert(input: Input) -> String {
+        return String(describing: input)
     }
 }
