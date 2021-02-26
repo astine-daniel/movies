@@ -1,8 +1,8 @@
 PODS:
-  - Kingfisher (5.7.1)
-  - Nimble (8.0.2)
-  - Sourcery (0.16.2)
-  - SwiftLint (0.34.0)
+  - Kingfisher (6.1.1)
+  - Nimble (9.0.0)
+  - Sourcery (1.2.1)
+  - SwiftLint (0.42.0)
 
 DEPENDENCIES:
   - Kingfisher
@@ -11,18 +11,18 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Kingfisher
     - Nimble
     - Sourcery
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
-  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
-  Sourcery: 3f406d227efd179773b3c3599ebd1700d1a6013c
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
+  Kingfisher: 676d63307fbef6ed5d5ed400bff36983480d7500
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Sourcery: 4c6e420c227f95d566f133753a438b4ab026ced6
+  SwiftLint: 4fa9579c63416865179bc416f0a92d55f009600d
 
-PODFILE CHECKSUM: 723ee1b48611eaae628ef4de379f7eef4f262307
+PODFILE CHECKSUM: 1039564b01677fb348619e2f800d5e069706dc41
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.10.1

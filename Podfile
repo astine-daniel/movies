@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs'
+source 'https://cdn.cocoapods.org/' 
 
 install! 'cocoapods',
          :generate_multiple_pod_projects => true,
@@ -7,39 +7,37 @@ install! 'cocoapods',
 project 'Movies/Movies.xcodeproj'
 workspace 'Movies.xcworkspace'
 
-platform :ios, '10.3'
+platform :ios, '12'
 
 inhibit_all_warnings!
+use_frameworks! :linkage => :static
 
 def testing_pods
-  pod 'Nimble'
+  pod 'Nimble', :project_name => 'Testing'
 end
 
-abstract_target 'default' do
-  supports_swift_versions '>= 5.0'
+supports_swift_versions '>= 5.0'
 
-  # UI
-  pod 'Kingfisher'
+# UI
+pod 'Kingfisher', :project_name => 'UI'
 
-  # Lint
-  pod 'SwiftLint'
+# Lint
+pod 'SwiftLint', :project_name => 'Tools'
 
-  # Sourcery
-  pod 'Sourcery'
+# Sourcery
+pod 'Sourcery', :project_name => 'Tools'
 
-  target 'Movies' do
-    abstract_target 'tests'
-    target 'MoviesTests' do
-      inherit! :search_paths
+target 'Movies' do
+  target 'MoviesTests' do
+    inherit! :search_paths
 
-      testing_pods
-    end
+    testing_pods
+  end
 
-    target 'MoviesUITests' do
-      inherit! :search_paths
+  target 'MoviesUITests' do
+    inherit! :search_paths
 
-      testing_pods
-    end
+    testing_pods
   end
 end
 
