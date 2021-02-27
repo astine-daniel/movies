@@ -16,32 +16,36 @@ extension UpcomingMoviesResource: Resource { }
 extension UpcomingMoviesResource {
     static func upcoming(
         page: Int = 1,
-        info: APIServiceInfoProtocol = APIServiceInfo.default) -> UpcomingMoviesResource {
+        info: APIServiceInfoProtocol = APIServiceInfo.default
+    ) -> UpcomingMoviesResource {
         let queryItems: [URLQueryItem] = [
             .apiKey(value: info.apiKey),
             URLQueryItem(name: "page", value: String(page))
         ]
 
-        let endpoint = Endpoint(path: "movie/upcoming",
-                                queryItems: queryItems)
-
+        let endpoint = Endpoint(path: "movie/upcoming", queryItems: queryItems)
         let parser = ClosureResourceParser(UpcomingMoviesResource.parser)
 
-        return UpcomingMoviesResource(baseURL: info.baseURL,
-                                      version: info.version,
-                                      endpoint: endpoint,
-                                      parser: parser)
+        return UpcomingMoviesResource(
+            baseURL: info.baseURL,
+            version: info.version,
+            endpoint: endpoint,
+            parser: parser
+        )
     }
 }
 
 // MARK: - Private extension
 private extension UpcomingMoviesResource {
     // MARK: - Initialization
-    init(baseURL: URLConvertible,
-         version: String? = nil,
-         endpoint: Endpoint,
-         method: HTTPMethod = .get,
-         parser: ResourceParser) {
+    // swiftlint:disable:next function_default_parameter_at_end
+    init(
+        baseURL: URLConvertible,
+        version: String?,
+        endpoint: Endpoint,
+        method: HTTPMethod = .get,
+        parser: ResourceParser
+    ) {
         self.baseURL = baseURL
         self.version = version
         self.endpoint = endpoint
@@ -55,6 +59,8 @@ private extension UpcomingMoviesResource {
         }
 
         let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
         return try decoder.decode(ResponseModel.UpcomingMovies.self, from: data)
     }
 }

@@ -14,9 +14,7 @@ extension String: URLConvertible {
 
 // MARK: - URL extension
 extension URL: URLConvertible {
-    func asURL() throws -> URL {
-        return self
-    }
+    func asURL() throws -> URL { self }
 }
 
 // MARK: - URLComponents

@@ -13,7 +13,8 @@ final class ApplicationCoordinator: Coordinator {
     override func start() {
         let upcomingMoviesCoordinator = UpcomingMoviesCoordinator(
             router: NavigationRouter(navigationScreen: NavigationController()),
-            respository: MoviesRepository())
+            respository: MoviesRepository()
+        )
         add(child: upcomingMoviesCoordinator)
 
         upcomingMoviesCoordinator.start()

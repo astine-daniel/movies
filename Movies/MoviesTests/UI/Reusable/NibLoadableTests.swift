@@ -4,6 +4,12 @@ import Nimble
 import UIKit
 import XCTest
 
+private final class DefaultNibLoadableImplementation: NibLoadable { }
+
+private final class CustomNibLoadableImplementation: NibLoadable {
+    static var bundle: Bundle { Bundle.main }
+}
+
 final class NibLoadableTests: XCTestCase {
     func testShouldReturnCorretBundle() {
         let expectedDefault = Bundle(for: DefaultNibLoadableImplementation.self)
@@ -19,10 +25,4 @@ final class NibLoadableTests: XCTestCase {
     func testShouldReturnANib() {
         expect(DefaultNibLoadableImplementation.nib).toNot(beNil())
     }
-}
-
-private final class DefaultNibLoadableImplementation: NibLoadable { }
-
-private final class CustomNibLoadableImplementation: NibLoadable {
-    static var bundle: Bundle { return Bundle.main }
 }

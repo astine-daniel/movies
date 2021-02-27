@@ -1,9 +1,10 @@
 import UIKit
 
 extension UIViewController: Presentable {
-    func toPresent() -> ScreenProtocol { return self }
+    func toPresent() -> ScreenProtocol { self }
 }
 
 extension UIWindow: Presentable {
-    func toPresent() -> ScreenProtocol { return rootViewController! }
+    // swiftlint:disable:next force_unwrapping
+    func toPresent() -> ScreenProtocol { rootViewController! }
 }

@@ -16,26 +16,30 @@ extension GenresResource: Resource { }
 extension GenresResource {
     static func genres(info: APIServiceInfoProtocol = APIServiceInfo.default) -> GenresResource {
         let queryItems: [URLQueryItem] = [.apiKey(value: info.apiKey)]
-        let endpoint = Endpoint(path: "genre/movie/list",
-                                queryItems: queryItems)
+        let endpoint = Endpoint(path: "genre/movie/list", queryItems: queryItems)
 
         let parser = ClosureResourceParser(GenresResource.parser)
 
-        return GenresResource(baseURL: info.baseURL,
-                              version: info.version,
-                              endpoint: endpoint,
-                              parser: parser)
+        return GenresResource(
+            baseURL: info.baseURL,
+            version: info.version,
+            endpoint: endpoint,
+            parser: parser
+        )
     }
 }
 
 // MARK: - Private extension
 private extension GenresResource {
     // MARK: - Initialization
-    init(baseURL: URLConvertible,
-         version: String? = nil,
-         endpoint: Endpoint,
-         method: HTTPMethod = .get,
-         parser: ResourceParser) {
+    // swiftlint:disable:next function_default_parameter_at_end
+    init(
+        baseURL: URLConvertible,
+        version: String? = nil,
+        endpoint: Endpoint,
+        method: HTTPMethod = .get,
+        parser: ResourceParser
+    ) {
         self.baseURL = baseURL
         self.version = version
         self.endpoint = endpoint
@@ -44,9 +48,7 @@ private extension GenresResource {
     }
 
     static func parser(data: Data?) throws -> ResponseModel.Genres {
-        guard let data = data else {
-            return ResponseModel.Genres(genres: [])
-        }
+        guard let data = data else { return ResponseModel.Genres(genres: [ResponseModel.Genre]()) }
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

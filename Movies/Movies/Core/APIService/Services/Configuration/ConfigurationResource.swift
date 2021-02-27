@@ -16,26 +16,24 @@ extension ConfigurationResource: Resource { }
 extension ConfigurationResource {
     static func configuration(info: APIServiceInfoProtocol = APIServiceInfo.default) -> ConfigurationResource {
         let queryItems: [URLQueryItem] = [.apiKey(value: info.apiKey)]
-        let endpoint = Endpoint(path: "configuration",
-                                queryItems: queryItems)
+        let endpoint = Endpoint(path: "configuration", queryItems: queryItems)
 
         let parser = ClosureResourceParser(ConfigurationResource.parser)
-
-        return ConfigurationResource(baseURL: info.baseURL,
-                                     version: info.version,
-                                     endpoint: endpoint,
-                                     parser: parser)
+        return ConfigurationResource(baseURL: info.baseURL, version: info.version, endpoint: endpoint, parser: parser)
     }
 }
 
 // MARK: - Private extension
 private extension ConfigurationResource {
     // MARK: - Initialization
-    init(baseURL: URLConvertible,
-         version: String? = nil,
-         endpoint: Endpoint,
-         method: HTTPMethod = .get,
-         parser: ResourceParser) {
+    // swiftlint:disable:next function_default_parameter_at_end
+    init(
+        baseURL: URLConvertible,
+        version: String? = nil,
+        endpoint: Endpoint,
+        method: HTTPMethod = .get,
+        parser: ResourceParser
+    ) {
         self.baseURL = baseURL
         self.version = version
         self.endpoint = endpoint
@@ -44,9 +42,7 @@ private extension ConfigurationResource {
     }
 
     static func parser(data: Data?) throws -> ResponseModel.Configuration {
-        guard let data = data else {
-            throw NetworkingError.parseFailed(type: ResponseModel.Configuration.self)
-        }
+        guard let data = data else { throw NetworkingError.parseFailed(type: ResponseModel.Configuration.self) }
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

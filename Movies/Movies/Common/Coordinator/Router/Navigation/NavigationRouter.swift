@@ -20,7 +20,7 @@ final class NavigationRouter: NSObject {
 }
 
 extension NavigationRouter: NavigationRouterProtocol {
-    var rootScreen: ScreenProtocol { return navigationScreen }
+    var rootScreen: ScreenProtocol { navigationScreen }
 
     func setRoot(_ module: Module, animated: Bool) {
         completions.forEach { $0.value() }
@@ -31,7 +31,7 @@ extension NavigationRouter: NavigationRouterProtocol {
     }
 
     func show(_ module: Module, animated: Bool, completion: Completion?) {
-        guard navigationScreen.viewControllers.isEmpty == false else {
+        guard !navigationScreen.viewControllers.isEmpty else {
             setRoot(module, animated: animated)
             return
         }
@@ -44,9 +44,11 @@ extension NavigationRouter: NavigationRouterProtocol {
         navigationScreen.present(viewController, style: .show(animated: animated))
     }
 
-    func backTo(_ module: Module,
-                animatedWith animation: NavigationRouterBackAnimation = .normal,
-                completion: Completion?) {
+    func backTo(
+        _ module: Module,
+        animatedWith animation: NavigationRouterBackAnimation = .normal,
+        completion: Completion? = nil
+    ) {
         guard navigationScreen.viewControllers.count > 1 else { return }
 
         guard let viewController = module.toPresent() as? UIViewController else { return }
@@ -73,12 +75,13 @@ extension NavigationRouter: NavigationRouterProtocol {
 }
 
 extension NavigationRouter: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController,
-                              didShow viewController: UIViewController,
-                              animated: Bool) {
-        guard let poppedViewController = navigationController
-            .transitionCoordinator?.viewController(forKey: .from) else {
-                return
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didShow viewController: UIViewController,
+        animated: Bool
+    ) {
+        guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else {
+            return
         }
 
         guard navigationController.viewControllers.contains(poppedViewController) == false else { return }
@@ -93,27 +96,40 @@ private extension NavigationRouter {
         completion()
     }
 
-    func backTo(viewController: UIViewController,
-                animatedWith animation: NavigationRouterBackAnimation,
-                completion: Completion?) {
+    func backTo(
+        viewController: UIViewController,
+        animatedWith animation: NavigationRouterBackAnimation,
+        completion: Completion?
+    ) {
         var customCompletion: Completion = {
             completion?()
         }
 
         switch animation {
         case .none:
-            completions[navigationScreen.visibleViewController!] = customCompletion
+            if let visibleViewController = navigationScreen.visibleViewController {
+                completions[visibleViewController] = customCompletion
+            }
+
             backTo(viewController: viewController, animated: false)
+
         case .normal:
-            completions[navigationScreen.visibleViewController!] = customCompletion
+            if let visibleViewController = navigationScreen.visibleViewController {
+                completions[visibleViewController] = customCompletion
+            }
+
             backTo(viewController: viewController)
+
         case .fade:
             customCompletion = { [weak self] in
                 self?.completeBackTransitionWithFadeAnimation()
                 completion?()
             }
 
-            completions[navigationScreen.visibleViewController!] = customCompletion
+            if let visibleViewController = navigationScreen.visibleViewController {
+                completions[visibleViewController] = customCompletion
+            }
+
             fadeTo(viewController: viewController)
         }
     }
@@ -147,10 +163,13 @@ private extension NavigationRouter {
     func completeBackTransitionWithFadeAnimation() {
         guard let snapshotView = snapshotView else { return }
 
-        UIView.animate(withDuration: 1.0, animations: {
-            snapshotView.alpha = 0.0
-        }, completion: { _ in
-            snapshotView.removeFromSuperview()
-        })
+        UIView.animate(
+            withDuration: 1.0,
+            animations: {
+                snapshotView.alpha = 0.0
+            }, completion: { _ in
+                snapshotView.removeFromSuperview()
+            }
+        )
     }
 }

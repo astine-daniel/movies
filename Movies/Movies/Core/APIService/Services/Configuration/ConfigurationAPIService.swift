@@ -20,7 +20,8 @@ private extension APIServiceProtocol {
     @discardableResult
     func request(
         resource: ConfigurationResource,
-        _ completion: @escaping Completion<ResponseModel.Configuration>) -> Request? {
-        return request(resource, completion)
+        _ completion: @escaping Completion<ResponseModel.Configuration>
+    ) -> Request? {
+        request(resource, completion)
     }
 }

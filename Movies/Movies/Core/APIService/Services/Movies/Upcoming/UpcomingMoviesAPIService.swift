@@ -20,7 +20,8 @@ private extension APIServiceProtocol {
     @discardableResult
     func request(
         resource: UpcomingMoviesResource,
-        _ completion: @escaping Completion<ResponseModel.UpcomingMovies>) -> Request? {
-        return request(resource, completion)
+        _ completion: @escaping Completion<ResponseModel.UpcomingMovies>
+    ) -> Request? {
+        request(resource, completion)
     }
 }

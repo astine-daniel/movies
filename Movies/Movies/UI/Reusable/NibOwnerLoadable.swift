@@ -1,3 +1,3 @@
-protocol NibOwnerLoadable: NibLoadable { }
-
 typealias NibOwnerReusable = Reusable & NibOwnerLoadable
+
+protocol NibOwnerLoadable: NibLoadable { }

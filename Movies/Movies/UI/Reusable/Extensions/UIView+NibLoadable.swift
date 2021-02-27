@@ -1,5 +1,6 @@
 import UIKit
 
+// swiftlint:disable file_name
 extension NibLoadable where Self: UIView {
     static func loadFromNib() -> Self {
         guard let view = nib.instantiate(withOwner: nil, options: nil).first as? Self else {
@@ -9,3 +10,4 @@ extension NibLoadable where Self: UIView {
         return view
     }
 }
+// swiftlint:enable file_name

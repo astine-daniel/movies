@@ -7,5 +7,5 @@ protocol ProjectInfo {
 }
 
 extension Bundle: ProjectInfo {
-    var infos: Infos? { return infoDictionary }
+    var infos: Infos? { infoDictionary }
 }

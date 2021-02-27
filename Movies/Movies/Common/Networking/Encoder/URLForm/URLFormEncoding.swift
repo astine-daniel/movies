@@ -8,10 +8,12 @@ struct URLFormEncoding {
     let spaceEncoding: URLFormEncoding.Space
 
     // MARK: - Initialization
-    init(arrayEncoding: URLFormEncoding.Array = .brackets,
-         boolEncoding: URLFormEncoding.Bool = .numeric,
-         dateEncoding: URLFormEncoding.Date = .deferredToDate,
-         spaceEncoding: URLFormEncoding.Space = .percentEscaped) {
+    init(
+        arrayEncoding: URLFormEncoding.Array = .brackets,
+        boolEncoding: URLFormEncoding.Bool = .numeric,
+        dateEncoding: URLFormEncoding.Date = .deferredToDate,
+        spaceEncoding: URLFormEncoding.Space = .percentEscaped
+    ) {
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
         self.dateEncoding = dateEncoding
@@ -46,14 +48,19 @@ extension URLFormEncoding {
             switch self {
             case .deferredToDate:
                 return nil
+
             case .secondsSince1970:
                 return String(value.timeIntervalSince1970)
+
             case .millisecondsSince1970:
-                return String(value.timeIntervalSince1970 * 1_000)
+                return String(value.timeIntervalSince1970 * Double(1_000))
+
             case .iso8601:
                 return URLFormEncoding.Date.iso8601Formatter.string(from: value)
+
             case let .formatted(formatter):
                 return formatter.string(from: value)
+
             case let .custom(closure):
                 return try closure(value)
             }
@@ -104,7 +111,5 @@ private extension Swift.Bool {
         return 1
     }
 
-    var stringValue: String {
-        return String(self)
-    }
+    var stringValue: String { String(self) }
 }

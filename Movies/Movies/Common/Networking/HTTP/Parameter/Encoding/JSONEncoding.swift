@@ -12,8 +12,8 @@ struct JSONEncoding {
 
 // MARK: - Default JSON encodings
 extension JSONEncoding {
-    static var `default`: JSONEncoding { return JSONEncoding() }
-    static var prettyPrinted: JSONEncoding { return JSONEncoding(options: .prettyPrinted) }
+    static var `default`: JSONEncoding { JSONEncoding() }
+    static var prettyPrinted: JSONEncoding { JSONEncoding(options: .prettyPrinted) }
 }
 
 // MARK: - ParameterEncoding extension

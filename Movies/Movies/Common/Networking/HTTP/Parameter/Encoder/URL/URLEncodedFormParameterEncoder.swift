@@ -6,8 +6,7 @@ struct URLEncodedFormParameterEncoder {
     private let destination: Destination
 
     // MARK: - Initialization
-    init(encoder: URLEncodedFormEncoderProtocol = URLEncodedFormEncoder(),
-         destination: Destination = .methodDependent) {
+    init(encoder: URLEncodedFormEncoderProtocol = URLEncodedFormEncoder(), destination: Destination = .methodDependent) {
         self.encoder = encoder
         self.destination = destination
     }
@@ -17,7 +16,8 @@ struct URLEncodedFormParameterEncoder {
 extension URLEncodedFormParameterEncoder: ParameterEncoder {
     func encode<Parameters>(
         _ parameters: Parameters?,
-        into request: URLRequest) throws -> URLRequest where Parameters: Encodable {
+        into request: URLRequest
+    ) throws -> URLRequest where Parameters: Encodable {
         guard let parameters = parameters else { return request }
 
         guard let url = request.url else {
@@ -51,8 +51,10 @@ extension URLEncodedFormParameterEncoder {
             case .methodDependent:
                 let methods: [HTTPMethod] = [.get, .head, .delete]
                 return methods.contains(method)
+
             case .queryString:
                 return true
+
             case .httpBody:
                 return false
             }
@@ -65,7 +67,8 @@ private extension URLEncodedFormParameterEncoder {
     func encodeUsingQueryString<Parameters>(
         _ parameters: Parameters,
         into request: URLRequest,
-        with components: URLComponents) throws -> URLRequest where Parameters: Encodable {
+        with components: URLComponents
+    ) throws -> URLRequest where Parameters: Encodable {
         var request = request
         var components = components
 
@@ -86,7 +89,8 @@ private extension URLEncodedFormParameterEncoder {
 
     func encodeUsingHTTPBody<Parameters>(
         _ parameters: Parameters,
-        into request: URLRequest) throws -> URLRequest where Parameters: Encodable {
+        into request: URLRequest
+    ) throws -> URLRequest where Parameters: Encodable {
         var request = request
 
         if request.headers["Content-Type"] == nil {

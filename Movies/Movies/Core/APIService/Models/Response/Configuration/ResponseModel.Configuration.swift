@@ -1,3 +1,5 @@
+// swiftlint:disable file_types_order
+
 extension ResponseModel {
     struct Configuration {
         let images: Images
@@ -6,8 +8,7 @@ extension ResponseModel {
 }
 
 // MARK: - Configuration decodable extension
-extension ResponseModel.Configuration: Decodable {
-}
+extension ResponseModel.Configuration: Decodable { }
 
 // MARK: - Configuration.Images
 extension ResponseModel.Configuration {
@@ -23,5 +24,6 @@ extension ResponseModel.Configuration {
 }
 
 // MARK: - Configuration.Images decodable extension
-extension ResponseModel.Configuration.Images: Decodable {
-}
+extension ResponseModel.Configuration.Images: Decodable { }
+
+// swiftlint:enable file_types_order

@@ -7,9 +7,11 @@ struct URLEncoding {
     private let boolEncoding: BoolEncoding
 
     // MARK: - Initialization
-    init(destination: Destination = .methodDependent,
-         arrayEncoding: ArrayEncoding = .brackets,
-         boolEncoding: BoolEncoding = .numeric) {
+    init(
+        destination: Destination = .methodDependent,
+        arrayEncoding: ArrayEncoding = .brackets,
+        boolEncoding: BoolEncoding = .numeric
+    ) {
         self.destination = destination
         self.arrayEncoding = arrayEncoding
         self.boolEncoding = boolEncoding
@@ -18,9 +20,9 @@ struct URLEncoding {
 
 // MARK: - Default URL encodings
 extension URLEncoding {
-    static var `default`: URLEncoding { return URLEncoding() }
-    static var queryString: URLEncoding { return URLEncoding(destination: .queryString) }
-    static var httpBody: URLEncoding { return URLEncoding(destination: .httpBody) }
+    static var `default`: URLEncoding { URLEncoding() }
+    static var queryString: URLEncoding { URLEncoding(destination: .queryString) }
+    static var httpBody: URLEncoding { URLEncoding(destination: .httpBody) }
 }
 
 // MARK: - ParameterEncoding extension
@@ -47,8 +49,10 @@ extension URLEncoding {
             switch self {
             case .methodDependent:
                 return [.get, .head, .delete].contains(method)
+
             case .queryString:
                 return true
+
             case .httpBody:
                 return false
             }
@@ -127,16 +131,20 @@ private extension URLEncoding {
         switch value {
         case let dictionary as [String: Any]:
             components += dictionary.flatMap { self.queryComponents(fromKey: "\(key)[\($0)]", value: $1) }
+
         case let array as [Any]:
             components += array.flatMap { self.queryComponents(fromKey: arrayEncoding.encode(key), value: $0) }
+
         case let value as NSNumber:
             if value.isBool {
                 components.append((escape(key), escape(boolEncoding.encode(value.boolValue))))
             } else {
                 components.append((escape(key), escape("\(value)")))
             }
+
         case let bool as Bool:
             components.append((escape(key), escape(boolEncoding.encode(bool))))
+
         default:
             components.append((escape(key), escape("\(value)")))
         }
@@ -145,8 +153,7 @@ private extension URLEncoding {
     }
 
     func escape(_ string: String) -> String {
-        return string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowedByRFC3986)
-            .orDefault(string)
+        string.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowedByRFC3986) ?? string
     }
 }
 
@@ -157,14 +164,12 @@ private extension Bool {
         return 1
     }
 
-    var stringValue: String {
-        return String(self)
-    }
+    var stringValue: String { String(self) }
 }
 
 // MARK: - NSNumber helper extension
 private extension NSNumber {
-    var isBool: Bool { return CFBooleanGetTypeID() == CFGetTypeID(self) }
+    var isBool: Bool { CFBooleanGetTypeID() == CFGetTypeID(self) }
 }
 
 // MARK: - CharacterSet helper extension

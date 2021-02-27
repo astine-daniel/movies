@@ -2,9 +2,9 @@ import Foundation
 
 struct ConfigurationRepository {
     // Properties
-    private let service: ConfigurationAPIServiceProtocol
-
     private static var configuration: Model.Configuration?
+
+    private let service: ConfigurationAPIServiceProtocol
 
     // MARK: - Initialization
     init(service: ConfigurationAPIServiceProtocol = ConfigurationAPIService()) {
@@ -27,6 +27,7 @@ extension ConfigurationRepository: ConfigurationRepositoryProtocol {
                 ConfigurationRepository.configuration = configuration
 
                 completion(.success(configuration))
+
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -38,16 +39,9 @@ extension ConfigurationRepository: ConfigurationRepositoryProtocol {
 private extension ConfigurationRepository {
     func transform(_ response: ResponseModel.Configuration) -> Model.Configuration {
         let baseUrl = URL(string: response.images.secureBaseUrl)
-        let backdropSize = response.images.backdropSizes
-            .first(where: { $0.contains("780") })
-            .orDefault("original")
+        let backdropSize = response.images.backdropSizes.first { $0.contains("780") } ?? "original"
+        let posterSize = response.images.posterSizes.first { $0.contains("500") } ?? "original"
 
-        let posterSize = response.images.posterSizes
-            .first(where: { $0.contains("500") })
-            .orDefault("original")
-
-        return Model.Configuration(imageBaseUrl: baseUrl,
-                                   backdropSize: backdropSize,
-                                   posterSize: posterSize)
+        return Model.Configuration(imageBaseUrl: baseUrl, backdropSize: backdropSize, posterSize: posterSize)
     }
 }

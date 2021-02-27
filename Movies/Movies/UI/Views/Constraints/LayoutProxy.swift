@@ -1,12 +1,10 @@
 import UIKit
 
+// swiftlint:disable static_operator file_types_order
+
 // MARK: - Layout<Proxy>
 final class LayoutProxy {
     private let view: UIView
-
-    fileprivate init(view: UIView) {
-        self.view = view
-    }
 
     lazy var leading: LayoutProperty = property(with: view.leadingAnchor)
     lazy var trailing = property(with: view.trailingAnchor)
@@ -18,15 +16,19 @@ final class LayoutProxy {
 
     lazy var centerXAnchor = property(with: view.centerXAnchor)
     lazy var centerYAnchor = property(with: view.centerYAnchor)
+
+    fileprivate init(view: UIView) {
+        self.view = view
+    }
 }
 
 extension LayoutProxy {
     func property<Anchor: LayoutAnchor>(with anchor: Anchor) -> LayoutProperty<Anchor> {
-        return LayoutProperty(anchor: anchor)
+        LayoutProperty(anchor: anchor)
     }
 
     func property<Anchor: LayoutDimension>(witch anchor: Anchor) -> LayoutProperty<Anchor> {
-        return LayoutProperty(anchor: anchor)
+        LayoutProperty(anchor: anchor)
     }
 }
 
@@ -94,51 +96,50 @@ extension LayoutProperty where Anchor: LayoutDimension {
     }
 }
 
-// swiftlint:disable static_operator
 // MARK: - Operators
 @discardableResult
 func == <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (anchor: Anchor, offset: CGFloat)) -> NSLayoutConstraint {
-    return lhs.equal(to: rhs.anchor, offsetBy: rhs.offset)
+    lhs.equal(to: rhs.anchor, offsetBy: rhs.offset)
 }
 
 @discardableResult
 func == <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
-    return lhs.equal(to: rhs)
+    lhs.equal(to: rhs)
 }
 
 @discardableResult
 func >= <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (anchor: Anchor, offset: CGFloat)) -> NSLayoutConstraint {
-    return lhs.greaterThanOrEqual(to: rhs.anchor, offsetBy: rhs.offset)
+    lhs.greaterThanOrEqual(to: rhs.anchor, offsetBy: rhs.offset)
 }
 
 @discardableResult
 func >= <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
-    return lhs.greaterThanOrEqual(to: rhs)
+    lhs.greaterThanOrEqual(to: rhs)
 }
 
 @discardableResult
 func <= <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: (anchor: Anchor, offset: CGFloat)) -> NSLayoutConstraint {
-    return lhs.lessThanOrEqual(to: rhs.anchor, offsetBy: rhs.offset)
+    lhs.lessThanOrEqual(to: rhs.anchor, offsetBy: rhs.offset)
 }
 
 @discardableResult
 func <= <Anchor: LayoutAnchor>(lhs: LayoutProperty<Anchor>, rhs: Anchor) -> NSLayoutConstraint {
-    return lhs.lessThanOrEqual(to: rhs)
+    lhs.lessThanOrEqual(to: rhs)
 }
 
 @discardableResult
 func == <Anchor: LayoutDimension>(lhs: LayoutProperty<Anchor>, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.equal(to: rhs)
+    lhs.equal(to: rhs)
 }
 
 @discardableResult
 func <= <Anchor: LayoutDimension>(lhs: LayoutProperty<Anchor>, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.lessThanOrEqual(to: rhs)
+    lhs.lessThanOrEqual(to: rhs)
 }
 
 @discardableResult
 func >= <Anchor: LayoutDimension>(lhs: LayoutProperty<Anchor>, rhs: CGFloat) -> NSLayoutConstraint {
-    return lhs.greaterThanOrEqual(to: rhs)
+    lhs.greaterThanOrEqual(to: rhs)
 }
 
-// swiftlint:enable static_operator
+// swiftlint:enable static_operator file_types_order

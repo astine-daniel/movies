@@ -14,8 +14,11 @@ final class DelegatedTests: XCTestCase {
             wasDeallocated = true
             deinitExpectation.fulfill()
         }
+
+        // swiftlint:disable:next force_unwrapping
         tester!.log(URL(string: "https://test.com")!)
 
+        // swiftlint:disable:next force_unwrapping
         expect(tester!.logger.outputFromInput.isDelegateSet) == true
 
         tester = nil
@@ -42,8 +45,9 @@ private extension DelegatedTests {
 
         init() {
             logger = Logger()
+            // swiftlint:disable:next unneeded_parentheses_in_closure_argument
             logger.outputFromInput.delegate(to: self) { (self, input) in
-                return self.convert(input: input)
+                self.convert(input: input)
             }
         }
 
@@ -58,7 +62,5 @@ private extension DelegatedTests {
 }
 
 private extension DelegatedTests.InputTester {
-    func convert(input: Input) -> String {
-        return String(describing: input)
-    }
+    func convert(input: Input) -> String { String(describing: input) }
 }

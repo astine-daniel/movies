@@ -21,7 +21,7 @@ final class UpcomingMoviesCoordinator: Coordinator {
 
 // MARK: - Presentable extension
 extension UpcomingMoviesCoordinator: Presentable {
-    func toPresent() -> ScreenProtocol { return router.rootScreen }
+    func toPresent() -> ScreenProtocol { router.rootScreen }
 }
 
 // MARK: - Private extension
@@ -29,10 +29,12 @@ private extension UpcomingMoviesCoordinator {
     func showUpcomingMoviesListScreen() {
         let view = UpcomingMoviesListView()
         let presentable = UpcomingMoviesListViewController(view)
+        // swiftlint:disable:next unneeded_parentheses_in_closure_argument
         presentable.didSelectUpcomingMovie.delegate(to: self) { (self, movie) in
             self.showUpcomingMovieDetailScreen(for: movie)
         }
 
+        // swiftlint:disable:next unneeded_parentheses_in_closure_argument
         presentable.didRequestMoreItems.delegate(to: self) { (self, _) in
             self.fetchMoreUpcomingMovies(presentable)
         }
@@ -62,7 +64,8 @@ private extension UpcomingMoviesCoordinator {
         let alertController = UIAlertController(
             title: "Error",
             message: "Something went wrong: \(error.localizedDescription)",
-            preferredStyle: .alert)
+            preferredStyle: .alert
+        )
         alertController.addAction(tryAgainAlertAction)
 
         router.present(alertController, animated: true)
@@ -76,6 +79,7 @@ private extension UpcomingMoviesCoordinator {
             switch result {
             case let .success(movies):
                 presentable.show(movies: movies)
+
             case let .failure(error):
                 self.showError(error) {
                     self.fetchUpcomingMovies(presentable)
@@ -89,6 +93,7 @@ private extension UpcomingMoviesCoordinator {
             switch result {
             case let .success(movies):
                 presentable.show(movies: movies)
+
             case let .failure(error):
                 self.showError(error) {
                     self.fetchMoreUpcomingMovies(presentable)

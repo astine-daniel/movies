@@ -9,8 +9,10 @@ enum NetworkingError: Error {
 }
 
 extension NetworkingError {
-    static func error(from statusCode: Int, validCodes: [Int] = []) -> NetworkingError? {
-        let validCodes = Array(200 ..< 300) + validCodes
+    static func error(from statusCode: Int, validCodes: [Int] = [Int]()) -> NetworkingError? {
+        var validCodes = validCodes
+        validCodes.append(contentsOf: [Int](200..<300))
+
         guard validCodes.contains(statusCode) else {
             return .statusCode(code: statusCode)
         }

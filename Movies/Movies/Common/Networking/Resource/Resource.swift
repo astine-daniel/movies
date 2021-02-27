@@ -13,9 +13,9 @@ protocol Resource: URLConvertible, URLRequestConvertible {
 
 // MARK: - Default implementation
 extension Resource {
-    var headers: HTTPHeaders? { return nil }
-    var parameters: ResourceParameters? { return nil }
-    var version: String? { return nil }
+    var headers: HTTPHeaders? { nil }
+    var parameters: ResourceParameters? { nil }
+    var version: String? { nil }
 
     func asURL() throws -> URL {
         let baseURL = try self.baseURL.asURL()

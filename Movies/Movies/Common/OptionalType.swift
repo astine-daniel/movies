@@ -5,7 +5,5 @@ protocol OptionalType: ExpressibleByNilLiteral {
 }
 
 extension Optional: OptionalType {
-    var asOptional: Wrapped? {
-        return self
-    }
+    var asOptional: Wrapped? { self }
 }

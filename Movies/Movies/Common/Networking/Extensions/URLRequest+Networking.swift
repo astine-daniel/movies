@@ -1,6 +1,11 @@
 import Foundation
 
 extension URLRequest {
+    var method: HTTPMethod? {
+        get { httpMethod.flatMap(HTTPMethod.init) }
+        set { httpMethod = newValue?.rawValue }
+    }
+
     init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws {
         let url = try url.asURL()
 
@@ -8,10 +13,5 @@ extension URLRequest {
 
         httpMethod = method.rawValue
         allHTTPHeaderFields = headers?.asDictionary()
-    }
-
-    var method: HTTPMethod? {
-        get { return httpMethod.flatMap(HTTPMethod.init) }
-        set { httpMethod = newValue?.rawValue }
     }
 }

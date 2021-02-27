@@ -6,17 +6,23 @@ enum URLFormComponent {
 
 // MARK: - Methods
 extension URLFormComponent {
-    var array: [URLFormComponent]? {
+    var array: [URLFormComponent] {
         switch self {
-        case let .array(array): return array
-        default: return nil
+        case let .array(array):
+            return array
+
+        default:
+            return []
         }
     }
 
-    var object: [String: URLFormComponent]? {
+    var object: [String: URLFormComponent] {
         switch self {
-        case let .object(object): return object
-        default: return nil
+        case let .object(object):
+            return object
+
+        default:
+            return [:]
         }
     }
 
@@ -39,9 +45,10 @@ private extension URLFormComponent {
         switch path.count {
         case 1:
             child = value
+
         case 2...:
             if let index = key.intValue {
-                let array = context.array.orDefault([])
+                let array = context.array
                 if array.count > index {
                     child = array[index]
                 } else {
@@ -50,14 +57,18 @@ private extension URLFormComponent {
 
                 set(&child, to: value, at: Array(path[1...]))
             } else {
-                child = (context.object?[key.stringValue]).orDefault(.object([:]))
+                child = (context.object[key.stringValue]) ?? .object([:])
                 set(&child, to: value, at: Array(path[1...]))
             }
-        default: fatalError("Unreachable")
+
+        default:
+            fatalError("Unreachable")
         }
 
         if let index = key.intValue {
-            if var array = context.array {
+            if !context.array.isEmpty {
+                var array = context.array
+
                 if array.count > index {
                     array[index] = child
                 } else {
@@ -69,8 +80,10 @@ private extension URLFormComponent {
                 context = .array([child])
             }
         } else {
-            if var object = context.object {
+            if !context.object.isEmpty {
+                var object = context.object
                 object[key.stringValue] = child
+
                 context = .object(object)
             } else {
                 context = .object([key.stringValue: child])

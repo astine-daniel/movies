@@ -6,8 +6,7 @@ struct URLEncodedFormEncoder {
     private let allowedCharacters: CharacterSet
 
     // MARK: - Initialization
-    init(encoding: URLFormEncoding = URLFormEncoding(),
-         allowedCharacters: CharacterSet = .urlQueryAllowedByRFC3986) {
+    init(encoding: URLFormEncoding = URLFormEncoding(), allowedCharacters: CharacterSet = .urlQueryAllowedByRFC3986) {
         self.encoding = encoding
         self.allowedCharacters = allowedCharacters
     }
@@ -27,9 +26,11 @@ extension URLEncodedFormEncoder: URLEncodedFormEncoderProtocol {
             throw Error.invalidRootObject("\(component)")
         }
 
-        let serializer = URLEncodedFormSerializer(arrayEncoding: encoding.arrayEncoding,
-                                                  spaceEncoding: encoding.spaceEncoding,
-                                                  allowedCharacters: allowedCharacters)
+        let serializer = URLEncodedFormSerializer(
+            arrayEncoding: encoding.arrayEncoding,
+            spaceEncoding: encoding.spaceEncoding,
+            allowedCharacters: allowedCharacters
+        )
         let query = serializer.serialize(object)
         return query
     }
@@ -39,9 +40,11 @@ extension URLEncodedFormEncoder: URLEncodedFormEncoderProtocol {
 private extension URLEncodedFormEncoder {
     func encode(_ value: Encodable) throws -> URLFormComponent {
         let context = URLFormEncoder.Context(.object([:]))
-        let encoder = URLFormEncoder(context: context,
-                                     boolEncoding: encoding.boolEncoding,
-                                     dateEncoding: encoding.dateEncoding)
+        let encoder = URLFormEncoder(
+            context: context,
+            boolEncoding: encoding.boolEncoding,
+            dateEncoding: encoding.dateEncoding
+        )
 
         try value.encode(to: encoder)
 

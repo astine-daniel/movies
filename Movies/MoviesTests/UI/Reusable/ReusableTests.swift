@@ -3,6 +3,12 @@
 import Nimble
 import XCTest
 
+private final class DefaultReusableImplementation: Reusable { }
+
+private final class CustomReusableImplementation: Reusable {
+    static var reuseIdentifier: String { "Custom" }
+}
+
 final class ReusableTests: XCTestCase {
     func testShouldReturnCorretIdentifier() {
         let expectedDefault = String(describing: DefaultReusableImplementation.self)
@@ -14,10 +20,4 @@ final class ReusableTests: XCTestCase {
         expect(defaultReuseIdentifier) == expectedDefault
         expect(customReuseIdentifier) == expectedCustom
     }
-}
-
-private final class DefaultReusableImplementation: Reusable { }
-
-private final class CustomReusableImplementation: Reusable {
-    static var reuseIdentifier: String { return "Custom" }
 }

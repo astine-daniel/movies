@@ -14,7 +14,8 @@ struct JSONParameterEncoder {
 extension JSONParameterEncoder: ParameterEncoder {
     func encode<Parameters>(
         _ parameters: Parameters?,
-        into request: URLRequest) throws -> URLRequest where Parameters: Encodable {
+        into request: URLRequest
+    ) throws -> URLRequest where Parameters: Encodable {
         guard let parameters = parameters else { return request }
         var request = request
 

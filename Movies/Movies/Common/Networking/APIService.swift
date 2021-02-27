@@ -10,8 +10,7 @@ struct APIService {
     private let queue: DispatchQueue?
 
     // MARK: - Initialization
-    init(session: URLSessionProtocol = URLSession.shared,
-         queue: DispatchQueue? = nil) {
+    init(session: URLSessionProtocol = URLSession.shared, queue: DispatchQueue? = nil) {
         self.session = session
         self.queue = queue
     }
@@ -22,7 +21,8 @@ extension APIService: APIServiceProtocol {
     @discardableResult
     func request<T>(
         _ resource: Resource,
-        _ completion: @escaping Completion<T>) -> Request? where T: Decodable {
+        _ completion: @escaping Completion<T>
+    ) -> Request? where T: Decodable {
         let completion: Completion<T> = { self.dispathAsync(completion, result: $0) }
 
         do {
@@ -50,8 +50,10 @@ private extension APIService {
         data: Data?,
         response: URLResponse?,
         error: Error?,
-        _ completion: @escaping Completion<T>) where T: Decodable {
+        _ completion: @escaping Completion<T>
+    ) where T: Decodable {
         guard error == nil else {
+            // swiftlint:disable:next force_unwrapping
             handle(error: error!, response: response, completion)
             return
         }
@@ -67,7 +69,8 @@ private extension APIService {
     func handle<T>(
         error: Error,
         response: URLResponse?,
-        _ completion: @escaping Completion<T>) where T: Decodable {
+        _ completion: @escaping Completion<T>
+    ) where T: Decodable {
         guard response == nil else {
             completion(.failure(error))
             return
@@ -80,7 +83,8 @@ private extension APIService {
         resource: Resource,
         response: HTTPURLResponse,
         data: Data?,
-        _ completion: @escaping (Result<T, Error>) -> Void) where T: Decodable {
+        _ completion: @escaping (Result<T, Error>) -> Void
+    ) where T: Decodable {
         guard let error = NetworkingError.error(from: response.statusCode) else {
             handle(resource: resource, data: data, completion)
             return
@@ -92,7 +96,8 @@ private extension APIService {
     func handle<T>(
         resource: Resource,
         data: Data?,
-        _ completion: @escaping Completion<T>) where T: Decodable {
+        _ completion: @escaping Completion<T>
+    ) where T: Decodable {
         do {
             let response: T = try resource.parser.parse(data)
             completion(.success(response))

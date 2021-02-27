@@ -1,5 +1,5 @@
 class Coordinator {
-    final private (set) var childCoordinators: [CoordinatorProtocol] = []
+    private (set) final var childCoordinators: [CoordinatorProtocol] = []
 
     func start() {
         guard type(of: self) != Coordinator.self else {
@@ -12,12 +12,12 @@ extension Coordinator: CoordinatorProtocol { }
 
 extension Coordinator {
     final func add(child coordinator: CoordinatorProtocol) {
-        guard childCoordinators.first(where: { $0 === coordinator }) == nil else { return }
+        guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
         childCoordinators.append(coordinator)
     }
 
     final func remove(child coordinator: CoordinatorProtocol) {
-        childCoordinators.removeAll(where: { $0 === coordinator })
+        childCoordinators.removeAll { $0 === coordinator }
     }
 
     final func removeAllChildCoordinator() {

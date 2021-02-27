@@ -6,6 +6,7 @@ struct Request {
     private (set) var state: State
     private (set) var task: URLSessionTask?
 
+    // swiftlint:disable:next function_default_parameter_at_end
     init(state: State, task: URLSessionTask? = nil, urlRequest: URLRequest) {
         self.state = state
         self.task = task
@@ -70,18 +71,22 @@ extension Request {
             switch (self, state) {
             case (.initialized, _):
                 return true
+
             case (_, .initialized),
                  (.cancelled, _),
                  (.finished, _):
                 return false
+
             case (.resumed, .cancelled),
                  (.suspended, .cancelled),
                  (.resumed, .suspended),
                  (.suspended, .resumed):
                 return true
+
             case (.suspended, .suspended),
                  (.resumed, .resumed):
                 return false
+
             case (_, .finished):
                 return true
             }

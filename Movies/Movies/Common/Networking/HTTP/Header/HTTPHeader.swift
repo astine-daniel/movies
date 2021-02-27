@@ -15,23 +15,23 @@ struct HTTPHeader: Hashable {
 // MARK: - Default headers
 extension HTTPHeader {
     static func accept(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .accept, value: value)
+        HTTPHeader(name: .accept, value: value)
     }
 
     static func acceptCharset(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .acceptCharset, value: value)
+        HTTPHeader(name: .acceptCharset, value: value)
     }
 
     static func acceptEncoding(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .acceptEncoding, value: value)
+        HTTPHeader(name: .acceptEncoding, value: value)
     }
 
     static func acceptLanguage(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .acceptLanguage, value: value)
+        HTTPHeader(name: .acceptLanguage, value: value)
     }
 
     static func authorization(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .authorization, value: value)
+        HTTPHeader(name: .authorization, value: value)
     }
 
     static func authorization(username: String, password: String) -> HTTPHeader {
@@ -40,19 +40,19 @@ extension HTTPHeader {
     }
 
     static func authorization(bearerToken: String) -> HTTPHeader {
-        return authorization("Bearer \(bearerToken)")
+        authorization("Bearer \(bearerToken)")
     }
 
     static func contentType(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .contentType, value: value)
+        HTTPHeader(name: .contentType, value: value)
     }
 
     static func contentType(_ value: HTTPContentType) -> HTTPHeader {
-        return contentType(value.description)
+        contentType(value.description)
     }
 
     static func userAgent(_ value: String) -> HTTPHeader {
-        return HTTPHeader(name: .userAgent, value: value)
+        HTTPHeader(name: .userAgent, value: value)
     }
 }
 
@@ -105,24 +105,6 @@ private extension HTTPHeader {
         case userAgent = "User-Agent"
     }
 
-    init(name: HTTPHeader.Name, value: String) {
-        self.name = name.rawValue
-        self.value = value
-    }
-
-    static func qualityEncoded(_ encondings: [String]) -> String {
-        return encondings
-            .enumerated()
-            .map { encondingWithQuality($1, position: $0) }
-            .joined(separator: ", ")
-    }
-
-    static func encondingWithQuality(_ encoding: String, position: Int) -> String {
-        let priority = (Double(position) * 0.1)
-        let quality: Double = (1.0 - priority)
-        return "\(encoding);q=\(quality)"
-    }
-
     static var osNameVersion: String {
         let version = ProcessInfo.processInfo.operatingSystemVersion
         let versionString = "\(version.majorVersion).\(version.minorVersion).\(version.patchVersion)"
@@ -144,5 +126,24 @@ private extension HTTPHeader {
         #else
         return "Unknown"
         #endif
+    }
+
+    init(name: HTTPHeader.Name, value: String) {
+        self.name = name.rawValue
+        self.value = value
+    }
+
+    static func qualityEncoded(_ encondings: [String]) -> String {
+        encondings
+            .enumerated()
+            .map { encondingWithQuality($1, position: $0) }
+            .joined(separator: ", ")
+    }
+
+    static func encondingWithQuality(_ encoding: String, position: Int) -> String {
+        let priority = Double(position) * Double(0.1)
+        let quality = Double(1.0) - priority
+
+        return "\(encoding);q=\(quality)"
     }
 }

@@ -10,6 +10,7 @@ extension UIImageView {
             switch result {
             case .failure:
                 self.backgroundColor = .darkGray
+
             default:
                 break
             }

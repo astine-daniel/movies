@@ -7,11 +7,11 @@ enum Configuration: String {
 
 extension Configuration {
     static var current: Configuration {
-        return from(Bundle.main)
+        from(Bundle.main)
     }
 
     static func from(_ projectInfo: ProjectInfo) -> Configuration {
-        return projectInfo.configuration
+        projectInfo.configuration
     }
 }
 

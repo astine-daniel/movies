@@ -7,13 +7,9 @@ enum Environment: String {
 }
 
 extension Environment {
-    static var current: Environment {
-        return from(Bundle.main)
-    }
+    static var current: Environment { from(Bundle.main) }
 
-    static func from(_ projectInfo: ProjectInfo) -> Environment {
-        return projectInfo.environment
-    }
+    static func from(_ projectInfo: ProjectInfo) -> Environment { projectInfo.environment }
 }
 
 extension ProjectInfo {

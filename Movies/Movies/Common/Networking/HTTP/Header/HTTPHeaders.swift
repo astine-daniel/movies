@@ -65,12 +65,12 @@ extension HTTPHeaders {
 
     // MARK: - Dictionary conversion
     func asDictionary() -> [String: String] {
-        return headers.reduce(into: [:]) { $0[$1.name] = $1.value }
+        headers.reduce(into: [:]) { $0[$1.name] = $1.value }
     }
 
     // MARK: - Subscript
     subscript(_ name: String) -> String? {
-        get { return value(for: name) }
+        get { value(for: name) }
         set {
             guard let value = newValue else {
                 remove(name: name)
@@ -94,7 +94,7 @@ extension HTTPHeaders: ExpressibleByDictionaryLiteral {
 // MARK: - URLRequest support extension
 extension URLRequest {
     var headers: HTTPHeaders {
-        get { return allHTTPHeaderFields.map(HTTPHeaders.init) ?? HTTPHeaders() }
+        get { allHTTPHeaderFields.map(HTTPHeaders.init) ?? HTTPHeaders() }
         set { allHTTPHeaderFields = newValue.asDictionary() }
     }
 }

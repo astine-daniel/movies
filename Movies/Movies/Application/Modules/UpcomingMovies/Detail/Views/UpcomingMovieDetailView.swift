@@ -1,24 +1,6 @@
 import UIKit
 
 final class UpcomingMovieDetailView: UIView {
-    // MARK: - Initialization
-    required init() {
-        super.init(frame: .zero)
-
-        commonInit()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        commonInit()
-    }
-
-    @available(*, unavailable)
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - Outlets
     @IBOutlet private var _contentView: UIView!
     @IBOutlet private var _scrollView: UIScrollView!
@@ -70,15 +52,33 @@ final class UpcomingMovieDetailView: UIView {
             _overviewContentLabel.numberOfLines = 0
         }
     }
+
+    // MARK: - Initialization
+    required init() {
+        super.init(frame: .zero)
+
+        commonInit()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        commonInit()
+    }
+
+    @available(*, unavailable)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 // MARK: - UpcomingMovieDetailViewProtocol extension
 extension UpcomingMovieDetailView: UpcomingMovieDetailViewProtocol {
-    var posterImageView: UIImageView { return _posterImageView }
-    var titleLabel: UILabel { return _titleLabel }
-    var releaseDateLabel: UILabel { return _releaseDateLabel }
-    var genresLabel: UILabel { return _genresLabel }
-    var overviewLabel: UILabel { return _overviewContentLabel }
+    var posterImageView: UIImageView { _posterImageView }
+    var titleLabel: UILabel { _titleLabel }
+    var releaseDateLabel: UILabel { _releaseDateLabel }
+    var genresLabel: UILabel { _genresLabel }
+    var overviewLabel: UILabel { _overviewContentLabel }
 }
 
 // MARK: - NibOwnerLoadable extension

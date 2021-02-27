@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable file_length
 struct URLFormEncoder {
     // MARK: - Properties
     private let context: URLFormEncoder.Context
@@ -10,10 +11,13 @@ struct URLFormEncoder {
     let codingPath: [CodingKey]
 
     // MARK: - Initialization
-    init(context: URLFormEncoder.Context,
-         codingPath: [CodingKey] = [],
-         boolEncoding: URLFormEncoding.Bool,
-         dateEncoding: URLFormEncoding.Date) {
+    // swiftlint:disable:next function_default_parameter_at_end
+    init(
+        context: URLFormEncoder.Context,
+        codingPath: [CodingKey] = [],
+        boolEncoding: URLFormEncoding.Bool,
+        dateEncoding: URLFormEncoding.Date
+    ) {
         self.context = context
         self.codingPath = codingPath
         self.boolEncoding = boolEncoding
@@ -24,30 +28,35 @@ struct URLFormEncoder {
 // MARK: - Encoder extension
 extension URLFormEncoder: Encoder {
     // Returns an empty dictionary, as this encoder doesn't support userInfo.
-    var userInfo: [CodingUserInfoKey: Any] {
-        return [:]
-    }
+    var userInfo: [CodingUserInfoKey: Any] { [:] }
 
     func container<Key>(keyedBy type: Key.Type) -> KeyedEncodingContainer<Key> where Key: CodingKey {
-        let container = URLFormEncoder.KeyedContainer<Key>(context: context,
-                                                           codingPath: codingPath,
-                                                           boolEncoding: boolEncoding,
-                                                           dateEncoding: dateEncoding)
+        let container = URLFormEncoder.KeyedContainer<Key>(
+            context: context,
+            codingPath: codingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
+
         return KeyedEncodingContainer(container)
     }
 
     func unkeyedContainer() -> UnkeyedEncodingContainer {
-        return URLFormEncoder.UnkeyedContainer(context: context,
-                                               codingPath: codingPath,
-                                               boolEncoding: boolEncoding,
-                                               dateEncoding: dateEncoding)
+        URLFormEncoder.UnkeyedContainer(
+            context: context,
+            codingPath: codingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 
     func singleValueContainer() -> SingleValueEncodingContainer {
-        return URLFormEncoder.SingleValueContainer(context: context,
-                                                   codingPath: codingPath,
-                                                   boolEncoding: boolEncoding,
-                                                   dateEncoding: dateEncoding)
+        URLFormEncoder.SingleValueContainer(
+            context: context,
+            codingPath: codingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 }
 
@@ -75,10 +84,12 @@ private extension URLFormEncoder {
         let codingPath: [CodingKey]
 
         // MARK: - Initialization
-        init(context: URLFormEncoder.Context,
-             codingPath: [CodingKey],
-             boolEncoding: URLFormEncoding.Bool,
-             dateEncoding: URLFormEncoding.Date) {
+        init(
+            context: URLFormEncoder.Context,
+            codingPath: [CodingKey],
+            boolEncoding: URLFormEncoding.Bool,
+            dateEncoding: URLFormEncoding.Date
+        ) {
             self.context = context
             self.codingPath = codingPath
             self.boolEncoding = boolEncoding
@@ -90,8 +101,10 @@ private extension URLFormEncoder {
 // MARK: - URLFormEncoder.KeyedContainer KeyedEncodingContainerProtocol extension
 extension URLFormEncoder.KeyedContainer: KeyedEncodingContainerProtocol {
     func encodeNil(forKey key: Key) throws {
-        let context = EncodingError.Context(codingPath: codingPath,
-                                            debugDescription: "URLFormEncoder cannot encode nil values.")
+        let context = EncodingError.Context(
+            codingPath: codingPath,
+            debugDescription: "URLFormEncoder cannot encode nil values."
+        )
         throw EncodingError.invalidValue("\(key): nil", context)
     }
 
@@ -102,49 +115,54 @@ extension URLFormEncoder.KeyedContainer: KeyedEncodingContainerProtocol {
 
     func nestedContainer<NestedKey>(
         keyedBy keyType: NestedKey.Type,
-        forKey key: Key) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
-        let container = URLFormEncoder.KeyedContainer<NestedKey>(context: context,
-                                                                 codingPath: nestedCodingPath(for: key),
-                                                                 boolEncoding: boolEncoding,
-                                                                 dateEncoding: dateEncoding)
+        forKey key: Key
+    ) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
+        let container = URLFormEncoder.KeyedContainer<NestedKey>(
+            context: context,
+            codingPath: nestedCodingPath(for: key),
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
+
         return KeyedEncodingContainer(container)
     }
 
     func nestedUnkeyedContainer(forKey key: Key) -> UnkeyedEncodingContainer {
-        let container = URLFormEncoder.UnkeyedContainer(context: context,
-                                                        codingPath: nestedCodingPath(for: key),
-                                                        boolEncoding: boolEncoding,
-                                                        dateEncoding: dateEncoding)
-        return container
+        URLFormEncoder.UnkeyedContainer(
+            context: context,
+            codingPath: nestedCodingPath(for: key),
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 
     func superEncoder() -> Encoder {
-        return URLFormEncoder(context: context,
-                              codingPath: codingPath,
-                              boolEncoding: boolEncoding,
-                              dateEncoding: dateEncoding)
+        URLFormEncoder(context: context, codingPath: codingPath, boolEncoding: boolEncoding, dateEncoding: dateEncoding)
     }
 
     func superEncoder(forKey key: Key) -> Encoder {
-        return URLFormEncoder(context: context,
-                              codingPath: nestedCodingPath(for: key),
-                              boolEncoding: boolEncoding,
-                              dateEncoding: dateEncoding)
+        URLFormEncoder(
+            context: context,
+            codingPath: nestedCodingPath(for: key),
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 }
 
 // MARK: - URLFormEncoder.KeyedContainer private extension
 private extension URLFormEncoder.KeyedContainer {
     func nestedCodingPath(for key: CodingKey) -> [CodingKey] {
-        return codingPath + [key]
+        codingPath + [key]
     }
 
     func nestedSingleValueEncoder(for key: Key) -> SingleValueEncodingContainer {
-        let container = URLFormEncoder.SingleValueContainer(context: context,
-                                                            codingPath: codingPath,
-                                                            boolEncoding: boolEncoding,
-                                                            dateEncoding: dateEncoding)
-        return container
+        URLFormEncoder.SingleValueContainer(
+            context: context,
+            codingPath: codingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 }
 
@@ -161,10 +179,12 @@ private extension URLFormEncoder {
         private let dateEncoding: URLFormEncoding.Date
 
         // MARK: - Initialization
-        init(context: URLFormEncoder.Context,
-             codingPath: [CodingKey],
-             boolEncoding: URLFormEncoding.Bool,
-             dateEncoding: URLFormEncoding.Date) {
+        init(
+            context: URLFormEncoder.Context,
+            codingPath: [CodingKey],
+            boolEncoding: URLFormEncoding.Bool,
+            dateEncoding: URLFormEncoding.Date
+        ) {
             self.context = context
             self.codingPath = codingPath
             self.boolEncoding = boolEncoding
@@ -179,8 +199,10 @@ extension URLFormEncoder.SingleValueContainer: SingleValueEncodingContainer {
         try checkCanEncode(value: nil)
         defer { canEncodeNewValue = false }
 
-        let context = EncodingError.Context(codingPath: codingPath,
-                                            debugDescription: "URLFormEncoder cannot encode nil values.")
+        let context = EncodingError.Context(
+            codingPath: codingPath,
+            debugDescription: "URLFormEncoder cannot encode nil values."
+        )
         throw EncodingError.invalidValue("nil", context)
     }
 
@@ -254,10 +276,12 @@ extension URLFormEncoder.SingleValueContainer: SingleValueEncodingContainer {
             try checkCanEncode(value: value)
             defer { canEncodeNewValue = false }
 
-            let encoder = URLFormEncoder(context: context,
-                                         codingPath: codingPath,
-                                         boolEncoding: boolEncoding,
-                                         dateEncoding: dateEncoding)
+            let encoder = URLFormEncoder(
+                context: context,
+                codingPath: codingPath,
+                boolEncoding: boolEncoding,
+                dateEncoding: dateEncoding
+            )
             try value.encode(to: encoder)
         }
     }
@@ -269,8 +293,7 @@ private extension URLFormEncoder.SingleValueContainer {
         guard canEncodeNewValue == false else { return }
 
         let debugDescription = "Attempt to encode value through single value container when previously value already encoded."
-        let context = EncodingError.Context(codingPath: codingPath,
-                                            debugDescription: debugDescription)
+        let context = EncodingError.Context(codingPath: codingPath, debugDescription: debugDescription)
         throw EncodingError.invalidValue(value as Any, context)
     }
 
@@ -289,19 +312,20 @@ private extension URLFormEncoder {
         let codingPath: [CodingKey]
 
         var count = 0
-        var nestedCodingPath: [CodingKey] {
-            return codingPath + [AnyCodingKey(intValue: count)!]
-        }
+        // swiftlint:disable:next force_unwrapping
+        var nestedCodingPath: [CodingKey] { codingPath + [AnyCodingKey(intValue: count)!] }
 
         private let context: URLFormEncoder.Context
         private let boolEncoding: URLFormEncoding.Bool
         private let dateEncoding: URLFormEncoding.Date
 
         // MARK: - Initialization
-        init(context: URLFormEncoder.Context,
-             codingPath: [CodingKey],
-             boolEncoding: URLFormEncoding.Bool,
-             dateEncoding: URLFormEncoding.Date) {
+        init(
+            context: URLFormEncoder.Context,
+            codingPath: [CodingKey],
+            boolEncoding: URLFormEncoding.Bool,
+            dateEncoding: URLFormEncoding.Date
+        ) {
             self.context = context
             self.codingPath = codingPath
             self.boolEncoding = boolEncoding
@@ -313,8 +337,10 @@ private extension URLFormEncoder {
 // MARK: - URLFormEncoder.UnkeyedContainer UnkeyedEncodingContainer extension
 extension URLFormEncoder.UnkeyedContainer: UnkeyedEncodingContainer {
     func encodeNil() throws {
-        let context = EncodingError.Context(codingPath: codingPath,
-                                            debugDescription: "URLFormEncoder cannot encode nil values.")
+        let context = EncodingError.Context(
+            codingPath: codingPath,
+            debugDescription: "URLFormEncoder cannot encode nil values."
+        )
         throw EncodingError.invalidValue("nil", context)
     }
 
@@ -324,32 +350,39 @@ extension URLFormEncoder.UnkeyedContainer: UnkeyedEncodingContainer {
     }
 
     func nestedContainer<NestedKey>(
-        keyedBy keyType: NestedKey.Type) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
+        keyedBy keyType: NestedKey.Type
+    ) -> KeyedEncodingContainer<NestedKey> where NestedKey: CodingKey {
         defer { count += 1 }
 
-        let container = URLFormEncoder.KeyedContainer<NestedKey>(context: context,
-                                                                 codingPath: nestedCodingPath,
-                                                                 boolEncoding: boolEncoding,
-                                                                 dateEncoding: dateEncoding)
+        let container = URLFormEncoder.KeyedContainer<NestedKey>(
+            context: context,
+            codingPath: nestedCodingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
         return KeyedEncodingContainer(container)
     }
 
     func nestedUnkeyedContainer() -> UnkeyedEncodingContainer {
         defer { count += 1 }
 
-        return URLFormEncoder.UnkeyedContainer(context: context,
-                                               codingPath: nestedCodingPath,
-                                               boolEncoding: boolEncoding,
-                                               dateEncoding: dateEncoding)
+        return URLFormEncoder.UnkeyedContainer(
+            context: context,
+            codingPath: nestedCodingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 
     func superEncoder() -> Encoder {
         defer { count += 1 }
 
-        return URLFormEncoder(context: context,
-                              codingPath: codingPath,
-                              boolEncoding: boolEncoding,
-                              dateEncoding: dateEncoding)
+        return URLFormEncoder(
+            context: context,
+            codingPath: codingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 }
 
@@ -358,10 +391,12 @@ private extension URLFormEncoder.UnkeyedContainer {
     func nestedSingleValueEncoder() -> SingleValueEncodingContainer {
         defer { count += 1 }
 
-        return URLFormEncoder.SingleValueContainer(context: context,
-                                                   codingPath: nestedCodingPath,
-                                                   boolEncoding: boolEncoding,
-                                                   dateEncoding: dateEncoding)
+        return URLFormEncoder.SingleValueContainer(
+            context: context,
+            codingPath: nestedCodingPath,
+            boolEncoding: boolEncoding,
+            dateEncoding: dateEncoding
+        )
     }
 }
 
@@ -385,10 +420,14 @@ private extension URLFormEncoder {
 
         init<Key>(_ base: Key) where Key: CodingKey {
             if let intValue = base.intValue {
+                // swiftlint:disable:next force_unwrapping
                 self.init(intValue: intValue)!
             } else {
+                // swiftlint:disable:next force_unwrapping
                 self.init(stringValue: base.stringValue)!
             }
         }
     }
 }
+
+// swiftlint:enable file_length

@@ -8,6 +8,7 @@ extension ScreenProtocol where Self: UIViewController {
         case let .modal(animated),
              let .main(animated):
             present(viewController, animated: animated)
+
         default:
             return
         }
@@ -25,8 +26,10 @@ extension ScreenProtocol where Self: UINavigationController {
         switch style {
         case let .modal(animated):
             visibleViewController?.present(viewController, animated: animated)
+
         case let .show(animated):
             pushViewController(viewController, animated: animated)
+
         case let .main(animated):
             setViewControllers([viewController], animated: animated)
         }
@@ -51,6 +54,7 @@ extension ScreenProtocol where Self: UIWindow {
             }
 
             rootViewController.present(viewController, animated: animated)
+
         case let .show(animated),
              let .main(animated):
             changeRootViewController(to: viewController, animated: animated)
@@ -71,16 +75,19 @@ private extension UIWindow {
             return
         }
 
-        let snapView = snapshotView(afterScreenUpdates: true)!
+        guard let snapView = snapshotView(afterScreenUpdates: true) else { return }
 
         viewController.view.addSubview(snapView)
         rootViewController = viewController
 
-        UIView.animate(withDuration: 1.0, animations: {
-            snapView.alpha = 0.0
-        }, completion: { _ in
-            snapView.removeFromSuperview()
-            self.isUserInteractionEnabled = true
-        })
+        UIView.animate(
+            withDuration: 1.0,
+            animations: {
+                snapView.alpha = 0.0
+            }, completion: { _ in
+                snapView.removeFromSuperview()
+                self.isUserInteractionEnabled = true
+            }
+        )
     }
 }

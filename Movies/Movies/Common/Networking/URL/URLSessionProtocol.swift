@@ -2,8 +2,7 @@ import Foundation
 
 protocol URLSessionProtocol {
     typealias Handler = (Data?, URLResponse?, Error?) -> Void
-    func dataTask(with request: URLRequest,
-                  completionHandler: @escaping Handler) -> URLSessionDataTask
+    func dataTask(with request: URLRequest, completionHandler: @escaping Handler) -> URLSessionDataTask
 }
 
 // MARK: - URLSession extension

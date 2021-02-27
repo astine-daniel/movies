@@ -1,5 +1,7 @@
 import Foundation
 
+// swiftlint:disable file_types_order
+
 extension ResponseModel {
     struct Movie: Hashable {
         let id: Int
@@ -31,24 +33,28 @@ extension ResponseModel.Movie: Decodable {
             throw NetworkingError.parseFailed(type: Date.self)
         }
 
-        self.init(id: id,
-                  title: title,
-                  posterPath: posterPath,
-                  genreIds: genreIds,
-                  backdropPath: backdropPath,
-                  overview: overview,
-                  releaseDate: releaseDate)
+        self.init(
+            id: id,
+            title: title,
+            posterPath: posterPath,
+            genreIds: genreIds,
+            backdropPath: backdropPath,
+            overview: overview,
+            releaseDate: releaseDate
+        )
     }
 }
 
 private extension ResponseModel.Movie {
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case title = "title"
-        case posterPath = "poster_path"
-        case genreIds = "genre_ids"
-        case backdropPath = "backdrop_path"
-        case overview = "overview"
-        case releaseDate = "release_date"
+        case id
+        case title
+        case posterPath
+        case genreIds
+        case backdropPath
+        case overview
+        case releaseDate
     }
 }
+
+// swiftlint:enable file_types_order

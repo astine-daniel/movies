@@ -1,5 +1,7 @@
 import Foundation
 
+// swiftlint:disable file_types_order
+
 extension Model {
     struct Configuration {
         // MARK: - Properties
@@ -20,11 +22,11 @@ extension Model {
 // MARK: - Methods extension
 extension Model.Configuration {
     func posterUrl(path: String) -> URL? {
-        return imageUrl(path: path, size: posterSize)
+        imageUrl(path: path, size: posterSize)
     }
 
     func backdropUrl(path: String) -> URL? {
-        return imageUrl(path: path, size: backdropSize)
+        imageUrl(path: path, size: backdropSize)
     }
 }
 
@@ -36,3 +38,5 @@ private extension Model.Configuration {
         return imageBaseUrl?.appendingPathComponent("\(size)\(path)")
     }
 }
+
+// swiftlint:enable file_types_order

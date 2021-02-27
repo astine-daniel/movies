@@ -27,8 +27,8 @@ final class UpcomingMoviesListView: UIView {
 
 // MARK: - UpcomingMoviesListViewProtocol extension
 extension UpcomingMoviesListView: UpcomingMoviesListViewProtocol {
-    var contentView: UIView { return _contentView }
-    var collectionView: UICollectionView { return _collectionView }
+    var contentView: UIView { _contentView }
+    var collectionView: UICollectionView { _collectionView }
 
     func add(searchBar: UISearchBar) {
         _seachContentView.addSubview(searchBar)

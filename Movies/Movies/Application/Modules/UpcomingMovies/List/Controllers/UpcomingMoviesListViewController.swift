@@ -78,16 +78,14 @@ final class UpcomingMoviesListViewController: UIViewController {
 
 // MARK: - UICollectionViewDataSource extension
 extension UpcomingMoviesListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isSearching { return _filteredMovies.count }
         if isRequestingMoreItems { return _movies.count + 1 }
 
         return _movies.count
     }
 
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard indexPath.item < _movies.count else {
             return loadingCell(for: indexPath, collectionView)
         }
@@ -136,7 +134,9 @@ private extension UpcomingMoviesListViewController {
         _view.collectionView.register(cellType: UpcomingMovieCollectionViewCell.self)
         _view.collectionView.register(cellType: LoadingCardCollectionViewCell.self)
 
+        // swiftlint:disable:next unneeded_parentheses_in_closure_argument
         _layoutDelegate.didSelectItem.delegate(to: self) { (self, indexPath) in self.didSelectItem(at: indexPath) }
+        // swiftlint:disable:next unneeded_parentheses_in_closure_argument
         _layoutDelegate.didRequestMoreItems.delegate(to: self) { (self, _) in
             self.requestMoreItems()
         }
@@ -177,9 +177,9 @@ private extension UpcomingMoviesListViewController {
 
         if isSearching == false {
             let insertIndexPath = IndexPath(item: _movies.count, section: 0)
-            _view.collectionView.performBatchUpdates({
+            _view.collectionView.performBatchUpdates {
                 _view.collectionView.insertItems(at: [insertIndexPath])
-            })
+            }
         }
 
         didRequestMoreItems.call()
@@ -216,10 +216,10 @@ private extension UpcomingMoviesListViewController {
 
         _movies.append(contentsOf: movies)
 
-        _view.collectionView.performBatchUpdates({
+        _view.collectionView.performBatchUpdates {
             _view.collectionView.deleteItems(at: deleteIndexPaths)
             _view.collectionView.insertItems(at: insertIndexPaths)
-        })
+        }
     }
 
     func search(movies: [Model.Movie]) {

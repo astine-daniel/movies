@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable file_types_order
 extension ResponseModel {
     struct UpcomingMovies {
         let page: Int
@@ -16,16 +17,16 @@ extension ResponseModel.UpcomingMovies: Decodable {
         let totalPages: Int = try container.decode(Int.self, forKey: .totalPages)
         let movies: [ResponseModel.Movie] = try container.decode([ResponseModel.Movie].self, forKey: .movies)
 
-        self.init(page: page,
-                  totalPages: totalPages,
-                  movies: movies)
+        self.init(page: page, totalPages: totalPages, movies: movies)
     }
 }
 
 private extension ResponseModel.UpcomingMovies {
     enum CodingKeys: String, CodingKey {
-        case page = "page"
-        case totalPages = "total_pages"
+        case page
+        case totalPages
         case movies = "results"
     }
 }
+
+// swiftlint:enable file_types_order

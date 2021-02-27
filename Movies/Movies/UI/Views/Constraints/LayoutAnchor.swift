@@ -11,11 +11,14 @@ extension NSLayoutAnchor: LayoutAnchor { }
 // swiftlint:disable static_operator
 // MARK: - Operators
 func + <Anchor: LayoutAnchor>(lhs: Anchor, rhs: CGFloat) -> (Anchor, CGFloat) {
-    return (lhs, rhs)
+    (lhs, rhs)
 }
 
 func - <Anchor: LayoutAnchor>(lhs: Anchor, rhs: CGFloat) -> (Anchor, CGFloat) {
-    return (lhs, -rhs)
+    var rhs = rhs
+    rhs.negate()
+
+    return (lhs, rhs)
 }
 
 // swiftlint:enable static_operator

@@ -7,9 +7,7 @@ struct URLEncodedFormSerializer {
     private let allowedCharacters: CharacterSet
 
     // MARK: - Initialization
-    init(arrayEncoding: URLFormEncoding.Array,
-         spaceEncoding: URLFormEncoding.Space,
-         allowedCharacters: CharacterSet) {
+    init(arrayEncoding: URLFormEncoding.Array, spaceEncoding: URLFormEncoding.Space, allowedCharacters: CharacterSet) {
         self.arrayEncoding = arrayEncoding
         self.spaceEncoding = spaceEncoding
         self.allowedCharacters = allowedCharacters
@@ -30,8 +28,10 @@ private extension URLEncodedFormSerializer {
         switch component {
         case let .string(string):
             return "\(escape(key))=\(escape(string))"
+
         case let .array(array):
             return serialize(array, forKey: key)
+
         case let .object(object):
             return serialize(object, forKey: key)
         }

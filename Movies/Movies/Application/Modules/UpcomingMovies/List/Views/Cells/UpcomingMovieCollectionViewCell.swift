@@ -1,20 +1,6 @@
 import UIKit
 
 final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
-    override func prepareForReuse() {
-        super.prepareForReuse()
-
-        _backdropImageView.backgroundColor = .white
-        _backdropImageView.image = nil
-
-        _posterImageView.backgroundColor = .white
-        _posterImageView.image = nil
-
-        _releaseDateLabel.text = nil
-        _titleLabel.text = nil
-        _genresLabel.text = nil
-    }
-
     // MARK: - IBOutlets
     @IBOutlet private var _contentView: UIView! {
         didSet {
@@ -64,6 +50,20 @@ final class UpcomingMovieCollectionViewCell: CardCollectionViewCell {
             _genresLabel.font = .systemFont(ofSize: 12)
             _genresLabel.text = nil
         }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        _backdropImageView.backgroundColor = .white
+        _backdropImageView.image = nil
+
+        _posterImageView.backgroundColor = .white
+        _posterImageView.image = nil
+
+        _releaseDateLabel.text = nil
+        _titleLabel.text = nil
+        _genresLabel.text = nil
     }
 }
 
