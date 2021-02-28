@@ -1,0 +1,11 @@
+//
+// Project-Release-Production.xcconfig
+//
+
+
+#include "Project-Release-Shared.xcconfig"
+
+// Environment
+//
+
+Environment = Production

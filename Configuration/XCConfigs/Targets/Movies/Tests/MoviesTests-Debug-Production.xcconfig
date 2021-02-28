@@ -1,0 +1,5 @@
+//
+// MoviesTests-Debug-Production.xcconfig
+//
+
+#include "MoviesTests-Shared.xcconfig"

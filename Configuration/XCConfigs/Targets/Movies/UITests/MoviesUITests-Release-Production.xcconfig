@@ -1,0 +1,5 @@
+//
+// MoviesUITests-Release-Production.xcconfig
+//
+
+#include "MoviesUITests-Shared.xcconfig"

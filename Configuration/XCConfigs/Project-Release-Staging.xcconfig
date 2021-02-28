@@ -1,0 +1,11 @@
+//
+// Project-Release-Staging.xcconfig
+//
+
+
+#include "Project-Release-Shared.xcconfig"
+
+// Environment
+//
+
+Environment = Staging

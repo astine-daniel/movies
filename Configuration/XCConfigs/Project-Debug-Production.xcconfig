@@ -1,0 +1,11 @@
+//
+// Project-Debug-Production.xcconfig
+//
+
+
+#include "Project-Debug-Shared.xcconfig"
+
+// Environment
+//
+
+Environment = Production
