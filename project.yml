@@ -1,0 +1,95 @@
+name: Movies
+
+configs:
+  Debug (Development): debug
+  Debug (Production): debug
+  Debug (Staging): debug
+  Release (Development): debug
+  Release (Production): release
+  Release (Staging): release
+configFiles:
+  Debug (Development): Configuration/XCConfigs/Project-Debug-Development.xcconfig
+  Debug (Production): Configuration/XCConfigs/Project-Debug-Production.xcconfig
+  Debug (Staging): Configuration/XCConfigs/Project-Debug-Staging.xcconfig
+  Release (Development): Configuration/XCConfigs/Project-Release-Development.xcconfig
+  Release (Production): Configuration/XCConfigs/Project-Release-Production.xcconfig
+  Release (Staging): Configuration/XCConfigs/Project-Release-Staging.xcconfig
+
+targets:
+  Movies:
+    type: application
+    platform: iOS
+    configFiles:
+      Debug (Development): Configuration/XCConfigs/Targets/Movies/Movies-Debug-Development.xcconfig
+      Debug (Production): Configuration/XCConfigs/Targets/Movies/Movies-Debug-Production.xcconfig
+      Debug (Staging): Configuration/XCConfigs/Targets/Movies/Movies-Debug-Staging.xcconfig
+      Release (Development): Configuration/XCConfigs/Targets/Movies/Movies-Release-Development.xcconfig
+      Release (Production): Configuration/XCConfigs/Targets/Movies/Movies-Release-Production.xcconfig
+      Release (Staging): Configuration/XCConfigs/Targets/Movies/Movies-Release-Staging.xcconfig
+
+    sources:
+      - path: Movies/Movies
+
+    preBuildScripts:
+      - path: Scripts/PreBuild/generate-credentials.sh
+        name: Generate Credentials
+        outputFiles:
+          - $(SRCROOT)/$(PROJECT_NAME)/Generated/Credentials.generated.swift
+
+      - path: Scripts/PreBuild/switlint.sh
+        name: SwiftLint
+
+  MoviesTests:
+    type: bundle.unit-test
+    platform: iOS
+    configFiles:
+      Debug (Development): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Debug-Development.xcconfig
+      Debug (Production): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Debug-Production.xcconfig
+      Debug (Staging): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Debug-Staging.xcconfig
+      Release (Development): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Release-Development.xcconfig
+      Release (Production): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Release-Production.xcconfig
+      Release (Staging): Configuration/XCConfigs/Targets/Movies/Tests/MoviesTests-Release-Staging.xcconfig
+    sources:
+      - path: Movies/MoviesTests
+    dependencies:
+      - target: Movies
+
+  MoviesUITests:
+    type: bundle.ui-test
+    platform: iOS
+    configFiles:
+      Debug (Development): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Debug-Development.xcconfig
+      Debug (Production): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Debug-Production.xcconfig
+      Debug (Staging): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Debug-Staging.xcconfig
+      Release (Development): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Release-Development.xcconfig
+      Release (Production): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Release-Production.xcconfig
+      Release (Staging): Configuration/XCConfigs/Targets/Movies/UITests/MoviesUITests-Release-Staging.xcconfig
+    sources:
+      - path: Movies/MoviesUITests
+    dependencies:
+      - target: Movies
+
+schemes:
+  Movies - Development:
+    build:
+      targets:
+        Movies: all
+    run:
+      config: Debug (Development)
+      environmentVariables:
+        - OS_ACTIVITY_MODE: disable
+    test:
+      config: Debug (Development)
+      gatherCoverageData: true
+      coverageTargets:
+        - Movies
+      targets:
+        - name: MoviesTests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Debug (Development)
+    analyze:
+      config: Debug (Development)
+    archive:
+      config: Debug (Development)
